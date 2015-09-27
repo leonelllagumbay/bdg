@@ -1,0 +1,58 @@
+', listeners: {
+	change: function(o,n) {
+		var cb = Ext.ComponentQuery.query('combobox[name=C__CRGPERSONELREQUEST__BRIEFDESCCODE]')[0];
+		cb.setValue(' ');
+		var cbs = cb.getStore();
+		var prms = {
+			limit: 30,
+			page: 1,
+			query: ' ',
+			start: 0,
+			tablename: 'CLKPOSITION',
+			columnDisplay: 'DESCRIPTION',
+			columnValue: 'POSITIONCODE',
+			columnDepends: 'DEPARTMENTCODE',
+			columnDependValues: 'EXECUTIVEOFFICE',
+			columnOrder: ' '
+		};
+		cbs.load({extraParams: prms});
+		console.log(cbs);
+	}
+},
+emptyCls: '
+
+', listeners: {
+	change: function(o,n) {
+		var cb = Ext.ComponentQuery.query('combobox[name=C__CRGPERSONELREQUEST__JOBSUMMARYCODE]')[0];
+		cb.setValue(' ');
+		cb.getStore().removeAll();
+		var cb = Ext.ComponentQuery.query('combobox[name=C__CRGPERSONELREQUEST__BRIEFDESCCODE]')[0];
+		cb.setValue(' ');
+		cb.getStore().removeAll();
+		var cb = Ext.ComponentQuery.query('combobox[name=C__CRGPERSONELREQUEST__SKILLSREQCODE]')[0];
+		cb.setValue(' ');
+		cb.getStore().removeAll();
+		var cb = Ext.ComponentQuery.query('htmleditor[name=C__CRGPERSONELREQUEST__JOBSUMMARY]')[0];
+		cb.setValue(' ');
+		var cb = Ext.ComponentQuery.query('htmleditor[name=C__CRGPERSONELREQUEST__BRIEFDESC]')[0];
+		cb.setValue(' ');
+		var cb = Ext.ComponentQuery.query('htmleditor[name=C__CRGPERSONELREQUEST__SKILLSREQ]')[0];
+		cb.setValue(' ');
+	}
+},
+emptyCls: '
+
+', listeners: {
+	change: function(o,n,b) {
+		console.log(o,n,b);
+	}
+},
+emptyCls: '
+
+
+', listeners: { 	change: function(o,n) { 		var cb = Ext.ComponentQuery.query('combobox[name=C__CRGPERSONELREQUEST__JOBSUMMARYCODE]')[0]; 		cb.setValue(' '); 		cb.getStore().removeAll(); 		var cb = Ext.ComponentQuery.query('combobox[name=C__CRGPERSONELREQUEST__BRIEFDESCCODE]')[0]; 		cb.setValue(' '); 		cb.getStore().removeAll(); 		var cb = Ext.ComponentQuery.query('combobox[name=C__CRGPERSONELREQUEST__SKILLSREQCODE]')[0]; 		cb.setValue(' '); 		cb.getStore().removeAll(); 		var cb = Ext.ComponentQuery.query('htmleditor[name=C__CRGPERSONELREQUEST__JOBSUMMARY]')[0]; 		cb.setValue(' '); 		var cb = Ext.ComponentQuery.query('htmleditor[name=C__CRGPERSONELREQUEST__BRIEFDESC]')[0]; 		cb.setValue(' '); 		var cb = Ext.ComponentQuery.query('htmleditor[name=C__CRGPERSONELREQUEST__SKILLSREQ]')[0]; 		
+cb.setValue(' '); 	
+var pc = Ext.ComponentQuery.query('displayfield[name=C__CLKPOSITION__POSITIONCODE]')[0];
+console.log(n);
+pc.setValue(n);
+} }, emptyCls: '

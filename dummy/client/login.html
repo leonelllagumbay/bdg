@@ -1,0 +1,68 @@
+<!DOCTYPE>
+<html>
+	<title>Village Login</title>
+	<head>
+		<link rel="icon" type="image/ico" href="../../resource/image/appicon/VillageLogo.ico">
+		<style type="text/css">
+			body {
+				font-family: Lucida Calligraphy;
+				color: rgb(148, 6, 19);
+				background-color: yellow;
+				height: 100%;
+			}
+			article section ul {
+				list-style: none;
+				list-style-type: none;
+			}
+			.asection {
+				padding: 10% 10% 10% 35%;
+			}
+			.asection ul li {
+				padding: 15px 20px 15px 5px;
+			}
+			.asection ul li input[type=text], input[type=password], input[type=submit] {
+				height: 40px;
+				font-size: 20px;
+				width: 300px;
+			}
+			.asection ul li input:hover {
+				border-bottom: solid 1px blue;
+			}
+			article section a {
+				color: rgb(148, 6, 19);
+			}
+		</style>
+	
+	</head>
+<body>
+	<header>
+	</header>
+	<nav></nav>
+	<article>
+	    <form name="login" action="./" method="post">
+		    <section class="asection">
+		    	<ul>
+		    		<li>
+		    			<input autofocus="true" name="username" id="username" type="text" placeholder="User Name"/>
+		    		</li>
+		    		<li>
+		    			<input name="password" id="password" type="password" placeholder="Password"/>
+		    		</li>
+		    		<!-- <li>
+		    			<input type="checkbox" name="rememberme" id="rememberme"/>
+		    		    <label for="rememberme" >Remember Me</label>
+		    		</li> -->
+		    		<li>
+		    			<input type="submit" name="submitlogin" title="Submit"/>
+		    		</li>
+		    		<li><span id="errorcontainer"></span></li>
+		    		<li><a href="./">Home</a></li>
+		    	</ul>
+		    	
+		    </section>
+	    </form>
+	</article>
+	<aside></aside>
+	<footer></footer>
+</body>
+</html>

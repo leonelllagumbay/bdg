@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <style>
+        .blue {
+        	background-color: #FF0000
+        }
+    </style>
+    <script type="text/javascript" src="../../scripts/google/google.js"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["orgchart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        
+        data.addColumn('string', 'Name');
+        data.addColumn('string', 'Manager');
+        data.addColumn('string', 'ToolTip');
+
+        var a = {
+        	  v:'Mike',
+        	  f:'Leonell Lagumbay<div style="color:red; font-style:italic">President</div>'
+        	  
+        };
+        var b = new Array();
+        b.push(a);
+        b.push('');
+        b.push('Tip');
+        console.log(b);
+        data.addRows([
+          b,
+          [{
+        	  v:'Jim', 
+        	  f:'Jim<div style="color:red; font-style:italic">Vice President</div>'
+           }, 
+           'Mike', 
+           'VP'
+          ],
+          [
+           'Alice', 
+           'Mike', 
+           ''
+          ],
+          [
+           'Michelle', 
+           'Mike', 
+           ''
+          ],
+          [
+           'Bob', 
+           'Jim', 
+           'Bob Sponge'
+          ],
+          [
+           'Carol', 
+           'Bob', 
+           ''
+          ],
+          [
+           'Leonell', 
+           'Bob', 
+           ''
+          ],
+          [
+           '<div style="background-color: red">Leonora</div>', 
+           'Bob', 
+           ''
+          ],
+          [
+           'Lenie', 
+           'Bob', 
+           ''
+          ]
+        ]);
+        
+        console.log(data);
+
+        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
+        chart.draw(data, {
+        	allowHtml:true,
+        	size: 'medium',
+        	allowCollapse: true
+        });
+
+        
+      }
+   </script>
+    </head>
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>
