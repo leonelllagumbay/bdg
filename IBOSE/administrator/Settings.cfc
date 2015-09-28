@@ -6,43 +6,38 @@ component
         {
         	if(Not isdefined("session.global_dsn")) {
 
-        		Settings = "";
-				myfile="#expandpath('/globalsettings/globalsettings.cfm')#";
-				fileObj = fileOpen( myfile, "read" );
-				fileObj.charset = "utf-8";
-					while( NOT fileIsEOF( fileObj ) ) {
-							Settings &= fileReadLine( fileObj );
-					}
-				fileClose( fileObj );
+        		Settings = StructNew();
 
-				jsonStruct = DeSerializeJSON(Settings);
-				applicationName = jsonStruct.DATA[2];
-				applicationVersion = jsonStruct.DATA[3];
-				globalDatabase = jsonStruct.DATA[4];
-				session.global_dsn = jsonStruct.DATA[4];
-				dateInstalled = jsonStruct.DATA[5];
-				dateUnInstalled = jsonStruct.DATA[6];
-				expirationDate = jsonStruct.DATA[7];
-				dateNofityBeforeExp = jsonStruct.DATA[8];
-				emailToExp = jsonStruct.DATA[9];
-				licensedToCompany = jsonStruct.DATA[10];
-				dbms = jsonStruct.DATA[11];
-				session.dbms = jsonStruct.DATA[11];
-				dbmsversion = jsonStruct.DATA[12];
-				session.dbmsversion = jsonStruct.DATA[12];
-				appMaxUsers = jsonStruct.DATA[13];
-				appMaxSignedIn = jsonStruct.DATA[14];
-				appSignature = jsonStruct.DATA[15];
-				defaultCompany = jsonStruct.DATA[16];
+				GlobalSettings = CreateObject("component","globalsettings.Config");
+				Settings = GlobalSettings.getInitConfig();
+
+				applicationName = Settings["MAIN_APPLICATION_NAME"];
+				applicationVersion = Settings["APPLICATION_VERSION"];
+				globalDatabase = Settings["GLOBAL_DATABASE_NAME"];
+				session.global_dsn = Settings["GLOBAL_DATABASE_NAME"];
+				dateInstalled = Settings["DATE_INSTALLED"];
+				dateUnInstalled = Settings["DATE_UNINSTALLED"];
+				expirationDate = Settings["EXPIRATION_DATE"];
+				dateNofityBeforeExp = Settings["DATE_NOTIF_BEFORE_EXP"];
+				emailToExp = Settings["EXPIRATION_NOTIF_TO"];
+				licensedToCompany = Settings["COMPANY_LICENSED_TO"];
+				dbms = Settings["MAIN_DBMS"];
+				session.dbms = Settings["MAIN_DBMS"];
+				dbmsversion = Settings["DBMS_VERSION"];
+				session.dbmsversion = Settings["DBMS_VERSION"];
+				appMaxUsers = Settings["MAX_APP_USER"];
+				appMaxSignedIn = Settings["MAX_SIGNEDIN_USER"];
+				appSignature = Settings["GLOBAL_APP_SIGNATURE"];
+				defaultCompany = Settings["DEFAULT_COMPANY"];
 				/**session.companycode or client.companycode will be replaced upon login to a different company.
 				*  This is useful for remembering the user's company cover page.
 				* */
 				session.companycode=defaultCompany;
 				client.companycode=defaultCompany;
-				superUserName = jsonStruct.DATA[17];
-				comment = jsonStruct.DATA[18];
-				unDBpathmapping = jsonStruct.DATA[19];
-				session.unDBpathmapping = jsonStruct.DATA[19];
+				superUserName = Settings["SUPER_USER_NAME"];
+				comment = Settings["COMMENTS"];
+				unDBpathmapping = Settings["UNDBPATHMAPPING"];
+				session.unDBpathmapping = Settings["UNDBPATHMAPPING"];
 
 				expirationDate = dateformat(expirationDate, "YYYY-MM-DD");
 				datenow = dateformat(now(), "YYYY-MM-DD");

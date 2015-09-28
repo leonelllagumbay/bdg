@@ -6,8 +6,9 @@
 		  				which is the ColdFusion J2EE servlet context.
 		  				For more information on unnamed scopes see Integrating JSP and servlets in a
 		  				ColdFusion application in the Developing ColdFusion Applications.
+		  Tip: Changing the name property would force the CF engine to restart checking files. Useful way if developing ORM apps.
     --->
-	<cfset this.name = "cf15v01172015" />
+	<cfset this.name = "cf16v01172015" />
 
 	<!--- Array of structs containing the channels you want to provide.--->
 	<cfset this.wschannels = [{name="chat"}] />
