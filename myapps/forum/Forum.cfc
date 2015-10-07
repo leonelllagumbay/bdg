@@ -29,7 +29,7 @@
 
 
 
- 	<cfinvoke component="IBOSE.Application.GridQuery"
+ 	<cfinvoke component="IBOSE.application.GridQuery"
  	          method="buildQuery"
  	          argumentcollection="#dparams#"
  	          returnvariable="dresult"
@@ -65,10 +65,18 @@
 
 <!--- end generate script --->
 	<cfset resultArr = ArrayNew(1) >
-	<cfset rootstuct = StructNew() >
+	<cfset rootstuct = StructNew() />
+	<cfset dkeys = StructNew() />
 	<cfset rootstuct['totalCount'] = qryDynamic.recordcount >
 	<!---Creates an array of structure to be converted to JSON using serializeJSON--->
 	<cfloop query="qryDynamic" startrow="#start#" endrow="#start + limit#" >
+
+		<cfif StructKeyExists(dkeys, qryDynamic.FORUMCODE) >
+			<cfset rootstuct['totalCount'] = val(rootstuct['totalCount']) - 1 >
+			<cfcontinue>
+		</cfif>
+
+		<cfset dkeys["#qryDynamic.FORUMCODE#"] = qryDynamic.FORUMCODE />
 		<cfset tmpresult = StructNew() > <!---Creates new structure in every loop to be added to the array--->
 		<cfset tmpresult['FORUMCODE']      	= qryDynamic.FORUMCODE  >
 		<cfset tmpresult['COMPANYCODE']     = qryDynamic.COMPANYCODE  >

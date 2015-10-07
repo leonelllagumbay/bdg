@@ -65,17 +65,20 @@ Ext.define('Form.controller.forum.forumcontroller', {
      	});
      	var thisnum = rec.data.UNREAD;
      	var mmsg = Ext.ComponentQuery.query('accordionview menu[name=mymessages] menuitem[name=forumstatus]')[0];
-		var curnumofitem = mmsg.newlistno;
-		var curnumofitem = curnumofitem - thisnum;
-		if(curnumofitem < 1) {
-			curnumofitem = 0;
-		} 
-		mmsg.newlistno = curnumofitem;
-		if(curnumofitem == 0) {
-			mmsg.setText("0 in eForums");
-		} else {
-			mmsg.setText("<span style='background-color: red; border-radius: 12px; color: white;'><b>&nbsp;" + curnumofitem + "&nbsp;</b></span> in eForums");
-		}
+     	if (mmsg !== undefined) {
+			var curnumofitem = mmsg.newlistno;
+			var curnumofitem = curnumofitem - thisnum;
+			if(curnumofitem < 1) {
+				curnumofitem = 0;
+			} 
+			mmsg.newlistno = curnumofitem;
+			if(curnumofitem == 0) {
+				mmsg.setText("0 in eForums");
+			} else {
+				mmsg.setText("<span style='background-color: red; border-radius: 12px; color: white;'><b>&nbsp;" + curnumofitem + "&nbsp;</b></span> in eForums");
+			}
+		
+     	}
 		rec.data.UNREAD = 0;	
 			
      },

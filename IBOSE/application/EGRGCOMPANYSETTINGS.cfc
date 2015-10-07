@@ -6,9 +6,9 @@
  **/
 component accessors=false output=false persistent=true table="EGRGCOMPANYSETTINGS" {
 	property name="COMPANYCODE" fieldtype="id";
-	property name="EGRGCOMPANY" cfc="EGRGCOMPANY" fieldtype="one-to-one" constrained="true" cascade="delete";
-	property name="EGRGTHEMES" cfc="EGRGTHEMES" fieldtype="one-to-one" constrained="true" cascade="delete";
-	property name="GRGCOMPANY" cfc="GRGCOMPANY" fieldtype="one-to-one" constrained="true" cascade="delete";
+	property name="EGRGCOMPANY" cfc="EGRGCOMPANY" fieldtype="one-to-one" cascade="delete";
+	property name="EGRGTHEMES" cfc="EGRGTHEMES" fieldtype="one-to-one" cascade="delete";
+	property name="GRGCOMPANY" cfc="GRGCOMPANY" fieldtype="one-to-one" cascade="delete";
 	property name="DESCRIPTION";
 	property name="SLOGAN";
 	property name="WEBSITEEMAILADD";

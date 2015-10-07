@@ -31,7 +31,7 @@ Ext.define('Form.controller.jobbuilder.MainController', {
         	var chartData = new Array();
         	var avatar = chartDataTemp[a].data['ecrgmyibose-AVATAR'];
         	var profilepic = "";
-        	if(avatar != "") profilepic = "<p><img src='../../resource/image/pics201/fbc/" + avatar + "' width='50' height='50' alt='No Profile Pic'></p>";
+        	if(avatar != "") profilepic = "<p><img src='./resource/image/pics201/" + GLOBAL_VARS_DIRECT['COMPANYCODE'].toLowerCase() + "/" + avatar + "' width='50' height='50' alt='No Profile Pic'></p>";
         	
         	tempStruct['v'] = chartDataTemp[a].data['cmfpa-PERSONNELIDNO'];
         	tempStruct['f'] = '<div style="' + chartDataTemp[a].data['clkposition-JOBSTYLE'] + '">' + chartDataTemp[a].data['clkposition-DESCRIPTION'] + '</div>' + profilepic +'<p>' + chartDataTemp[a].data['cmfpa-FIRSTNAME'] + ' ' + chartDataTemp[a].data['cmfpa-MIDDLENAME'] + ' ' + chartDataTemp[a].data['cmfpa-LASTNAME'] + '</p>';

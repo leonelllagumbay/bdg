@@ -31,7 +31,7 @@ Ext.application({
 	launch: function(){
 		
 	_myAppGlobal = this;	
-		Ext.create('Ext.container.Viewport', { 
+		Ext.create('Ext.panel.Panel', { 
 			layout: {
 				type: 'card'
 			},

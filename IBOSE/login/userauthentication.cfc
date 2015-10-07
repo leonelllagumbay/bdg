@@ -76,7 +76,9 @@
 					/* check if account was locked out when username & password is correct */
 					vObj = CreateObject("component","IBOSE.login.Validation");
 					Lresult = StructNew();
+
 					Lresult = vObj.checkAccountLockout(CheckedUser, theusername,thepassword,"validusernamepassword");
+
 					if(Lresult['message'] == "accountlockedout") {
 						return Lresult;
 					}
@@ -86,6 +88,7 @@
 					if(CheckedUser.CHANGEPWDNEXTLOGON == 'true') {
 						retMsg = "changepassword";
 					}
+
 					if(CheckedUser.PWDNEVEREXPIRES != true) {
 						validationObj = CreateObject("component","IBOSE.login.Validation");
 						if (IsDate(CheckedUser.DATEPASSWORD)) {
@@ -96,6 +99,7 @@
 							}
 						}
 					}
+
 				} else {
 					retMsg = "<b style='color: red;'>Your account has been disabled.<br>Please notify your system administrator.</b>";
 				}

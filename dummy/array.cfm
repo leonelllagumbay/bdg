@@ -89,5 +89,15 @@ list of
 
 
 
-<cfset ltest = 201509031011521100 >
-<cfoutput>#len(ltest)#</cfoutput>
+<!--- <cfset ltest = 201509031011521100 >
+<cfoutput>#len(ltest)#</cfoutput> --->
+
+<!--- <cfhttp url="http://www.dolephilippines.com/products/pineapple-juice" result="res">
+<cfdump var="#res#"> --->
+
+<li class="col-sm-2s">
+					<a href="#" onClick="var pwin = Ext.widget('littleloginform'); pwin.show();" class="">Sign In</a>
+				</li>
+				<li class="col-sm-2s">{login}
+				</li>
+<li class="col-sm-2s" name="right"  onclick="(function() { document.getElementById('applicationcontainer').innerHTML = '<iframe src=\\'../templates/application/careers/infinitecareers.html\\' width=\\'750\\' height=\\'100%\\' frameborder=\\'0\\' style=\\'padding-left: 50px; padding-top: 5px;\\'></iframe>'; })();">{careers}</li>
