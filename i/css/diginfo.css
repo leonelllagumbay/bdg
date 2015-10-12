@@ -3,13 +3,13 @@
 	margin: 0px;
 }
 
-body div header h1 img {
+#mainbody div header h1 img {
 	width: 70px;
 	height: 100px;
 	padding: 10px 4px 4px 10px;
 }
 
-body div header {
+#mainbody div header {
 	position: fixed;
 	z-index: 100008px;
 	left: 0px;
@@ -61,14 +61,14 @@ body div header {
 	font-size: 12px;
 }
 
-body div header h2 {
+#mainbody div header h2 {
 	position: absolute;
 	top: 70px;
 	left: 120px;
 	font: bold 17px Courier, monospace;
 }
 
-body div header ul {
+#mainbody div header ul {
 	position: absolute;
 	list-style: none;
 	top: 64px;
@@ -85,12 +85,36 @@ body div header ul li {
 	color: rgb(22,147,167);
 }
 
-body div header ul li:hover {
+#aboutus {
+	text-decoration: none;
+	color: rgb(22,147,167);
+	padding-right: 5px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 7px;
+	font: 20px Impact, Charcoal, sans-serif;
+}
+
+#joinus a {
+	text-decoration: none;
+	color: rgb(22,147,167);
+}
+
+#mypage a {
+	text-decoration: none;
+	color: rgb(22,147,167);
+}
+
+#mainbody div header ul li:hover, #joinus a:hover, #mypage a:hover, #aboutus:hover {
 	color: rgb(248,252,193);
 	background-color: rgb(204,12,57);
 	cursor: pointer;
 	text-decoration: underline;
 }
+
+
+
+
 
 #login {
 	margin-right: 40px;
@@ -116,14 +140,14 @@ body div header ul li:hover {
 
 .articles {
 	background-color: rgba(248,212,0,0.9);
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
 	left: 0px;
 } 
 
 .bose {
 	background-color: rgba(248,212,0,0.9);
-	position: absolute;
+	position: fixed;
 	bottom: 0px;
 	right: 0px;
 }
@@ -132,13 +156,12 @@ body div header ul li:hover {
 	left: 0%;
 	padding-top: 4px;
 	width: 10%;
-	height: 40%;
+	height: 10px;
 	color: white;
-	background-color: rgba(200,207,2,0.9);
+	background-color: rgb(200,207,2);
 	box-shadow: 3px 3px 6px #666;
 	-moz-box-shadow: 3px 3px 6px #666;
 	-webkit-box-shadow: 3px 3px 6px #666;
-	cursor: pointer;
 }
 
 #solutionsoffering {
@@ -146,78 +169,73 @@ body div header ul li:hover {
 	z-index: 1000;
 	left: 12%;
 	width: 10%;
-	height: 40%;
+	height: 10px;
 	box-shadow: 3px 3px 6px #666;
 	-moz-box-shadow: 3px 3px 6px #666;
 	-webkit-box-shadow: 3px 3px 6px #666;
-	cursor: pointer;
 }
 
 #thinkahead {
 	padding-top: 4px;
 	left: 24%;
 	width: 10%;
-	height: 40%;
+	height: 10px;
 	color: rgb(248,252,193);
-	background-color: rgba(22,147,167,0.9);
+	background-color: rgb(22,147,167);
 	box-shadow: 3px 3px 6px #666;
 	-moz-box-shadow: 3px 3px 6px #666;
 	-webkit-box-shadow: 3px 3px 6px #666;
-	cursor: pointer;
 }
 
 #builditnow {
 	padding-top: 4px;
 	left: 36%;
 	width: 10%;
-	height: 40%;
+	height: 10px;
 	color: white;
-	background-color: rgba(230,120,30,0.9);
+	background-color: rgb(230,120,30);
 	box-shadow: 3px 3px 6px #666;
 	-moz-box-shadow: 3px 3px 6px #666;
 	-webkit-box-shadow: 3px 3px 6px #666;
-	cursor: pointer;
 }
 
 #dbose {
 	padding-top: 4px;
 	right: 24%;
 	width: 10%;
-	height: 40%;
+	height: 10px;
 	box-shadow: -3px 3px 6px #666;
 	-moz-box-shadow: -3px 3px 6px #666;
 	-webkit-box-shadow: -3px 3px 6px #666;
-	cursor: pointer;
 }
 
 #ibose {
 	padding-top: 4px;
 	right: 12%;
 	width: 10%;
-	height: 40%;
+	height: 10px;
 	color: rgb(248,252,193);
-	background-color: rgba(204,12,57,0.9);
+	background-color: rgb(204,12,57);
 	box-shadow: -3px 3px 6px #666;
 	-moz-box-shadow: -3px 3px 6px #666;
 	-webkit-box-shadow: -3px 3px 6px #666;
-	cursor: pointer;
 }
 
 #mbose {
 	padding-top: 4px;
 	right: 0%;
 	width: 10%;
-	height: 40%;
+	height: 10px;
 	color: rgb(248,252,193);
 	background-color: rgba(22,147,167,0.9);
 	box-shadow: -3px 3px 6px #666;
 	-moz-box-shadow: -3px 3px 6px #666;
 	-webkit-box-shadow: -3px 3px 6px #666;
-	cursor: pointer;
 }
 
 #textualreading {
 	position: absolute;
+	padding-top: 100px;
 	top: 500px;
 	width: 60%;
 	margin-left: 20%;
@@ -226,8 +244,7 @@ body div header ul li:hover {
 
 #textualreading section {
 	float: left;
-	margin: 7px;
-	
+	margin: 7px;	
 }
 
 .headlines {
@@ -249,13 +266,23 @@ body div header ul li:hover {
 }
 
 #lastsectionoftextuals {
-	height: 300px;
+	height: 95px;
 	width: 100%;
 	padding-top: 70px;
+	/* background-color: rgb(248,212,0); */
+}
+
+#lastsectionoftextuals img {
+	position: absolute;
+	height: 25px;
+	width: 25px;
+	bottom: 30px;
 }
 
 #textualreading a:link {
 	text-decoration: none;
+	font-size: 30px;
+	font-weight: bold;
 	color: green;
 	padding: 20px;
 }
@@ -288,4 +315,30 @@ body div header ul li:hover {
 	float: left;
 	width: 200px;
 	padding-left: 20px;
+}
+
+#infoliveeskinmission {
+	border-radius: 10px;
+	clear: right;
+	opacity: 0.9;
+}
+
+#aboutdiginfo {
+	display: none;
+}
+
+#textualreading section img {
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	float: left;
+	box-shadow: 3px 3px 6px #666;
+	-moz-box-shadow: 3px 3px 6px #666;
+	-webkit-box-shadow: 3px 3px 6px #666;
+}
+
+#yearsofpioneering, #majorclientspecific, #diginfoacademyspec, #diginfolabsspec, #zoinuxspec, #meijiaspecs, #themanagementteamspec, #bpoexpressspec,
+#diginfoconsultingspec {
+	clear: left;
 }
