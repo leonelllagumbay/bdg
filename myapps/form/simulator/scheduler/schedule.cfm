@@ -1184,14 +1184,14 @@ delete schedulers but do not delete process router approvers information for vie
 						<cfset colName = columnNameModel[outIndex] >
 						</cfcatch>
 					</cftry>
-					<cftry>
+					<cfset cname = evaluate( colName ) />
+					<cfif trim(cname) neq "">
 						<cfset ArrayAppend( propertyArr, columnNameReal[outIndex] ) >
-						<cfset ArrayAppend( valueArr, decrypt( evaluate( colName ), ek ) ) >
-					<cfcatch>
+						<cfset ArrayAppend( valueArr, cname, ek ) >
+					<cfelse>
 						<cfset ArrayAppend( propertyArr, columnNameReal[outIndex] ) >
-						<cfset ArrayAppend( valueArr, evaluate( colName ) ) >
-					</cfcatch>
-					</cftry>
+						<cfset ArrayAppend( valueArr, cname ) >
+					</cfif>
 				</cfloop>
 			<cfelse>
 				<cfset ArrayAppend( propertyArr, "Employee No" ) >

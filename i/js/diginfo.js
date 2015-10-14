@@ -1,10 +1,10 @@
-$(function(){	
+/*$(function(){	
 	$('#carousel').infiniteCarousel({
 		displayTime: 3000,
 		transitionSpeed: 3000,
 		autoPilot: true,
 	});
-});
+});*/
 
 function openContactUs() {
 	Ext.create('Ext.window.Window', {
@@ -111,12 +111,12 @@ function openContactUs() {
 	}).show();
 };
 
-function showaboutus() {
-	var ishidden = $('#aboutdiginfo').is(":hidden");
+function showaboutus(containerid) {
+	var ishidden = $('#'+containerid).is(":hidden");
 	if (ishidden) {
-		$('#aboutdiginfo').show(1000);
+		$('#'+containerid).show(1000);
 	} else {
-		$('#aboutdiginfo').hide(1000);
+		$('#'+containerid).hide(1000);
 	}
 }
 

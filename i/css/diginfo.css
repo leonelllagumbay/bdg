@@ -3,7 +3,7 @@
 	margin: 0px;
 }
 
-#mainbody div header h1 img {
+#diginfoiconsep {
 	width: 70px;
 	height: 100px;
 	padding: 10px 4px 4px 10px;
@@ -16,7 +16,8 @@
 	top: 0px;
 	width: 100%;
 	height: 90px;
-	background-color: rgb(248,212,0);
+	/* background-color: rgb(248,212,0); */
+	background-color: black;
 	box-shadow: 3px 3px 6px #666;
 	-moz-box-shadow: 3px 3px 6px #666;
 	-webkit-box-shadow: 3px 3px 6px #666;
@@ -24,24 +25,24 @@
 
 #slidercontainer {
 	position: relative;
-	width: 1180px;
-	top: 120px;
+	width: 100%;
+	height: 70%;
+	top: 90px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-#companyname {
+#companyname img {
 	position: absolute;
-	top: 15px;
-	left: 90px;
-	font: 40px Impact, Charcoal, sans-serif;
-	color: rgb(248,252,193);
+	width: 200px;
+	top: 12px;
+	left: 80px;
 }
 
 #companysloganbetter {
 	position: absolute;
 	top: 55px;
-	left: 105px;
+	left: 143px;
 	font: 14px Courier, monospace;
 	color: rgb(230,120,30);
 }
@@ -49,7 +50,7 @@
 #companyslogansystem {
 	position: absolute;
 	top: 55px;
-	left: 160px;
+	left: 198px;
 	font: 14px Courier, monospace;
 	color: rgb(204,12,57);
 } 
@@ -57,14 +58,15 @@
 #registeredtrademark {
 	position: absolute;
 	top: 52px;
-	left: 212px;
-	font-size: 12px;
+	left: 270px;
+	color: rgb(187,160,17);
+	font-size: .47em;
 }
 
 #mainbody div header h2 {
 	position: absolute;
 	top: 70px;
-	left: 120px;
+	left: 158px;
 	font: bold 17px Courier, monospace;
 }
 
@@ -81,7 +83,7 @@ body div header ul li {
 	padding-left: 5px;
 	padding-top: 5px;
 	padding-bottom: 7px;
-	font: 20px Impact, Charcoal, sans-serif;
+	font: 20px Helvetica;
 	color: rgb(22,147,167);
 }
 
@@ -92,7 +94,7 @@ body div header ul li {
 	padding-left: 5px;
 	padding-top: 5px;
 	padding-bottom: 7px;
-	font: 20px Impact, Charcoal, sans-serif;
+	font: 20px Helvetica;
 }
 
 #joinus a {
@@ -105,7 +107,23 @@ body div header ul li {
 	color: rgb(22,147,167);
 }
 
-#mainbody div header ul li:hover, #joinus a:hover, #mypage a:hover, #aboutus:hover {
+#topbose a {
+	text-decoration: none;
+	color: rgb(22,147,167);
+}
+
+#topibose a {
+	text-decoration: none;
+	color: rgb(22,147,167);
+}
+
+#topmbose a {
+	text-decoration: none;
+	color: rgb(22,147,167);
+}
+
+#mainbody div header ul li:hover, #joinus a:hover, #mypage a:hover, #aboutus:hover, #topbose a:hover,
+#topibose a:hover, #topmbose a:hover {
 	color: rgb(248,252,193);
 	background-color: rgb(204,12,57);
 	cursor: pointer;
@@ -235,7 +253,6 @@ body div header ul li {
 
 #textualreading {
 	position: absolute;
-	padding-top: 100px;
 	top: 500px;
 	width: 60%;
 	margin-left: 20%;
@@ -250,6 +267,7 @@ body div header ul li {
 .headlines {
 	color: #ee7d2d;
 	font-size: 1.8em;
+	padding-top: 100px;
 }
 
 .headlinesections {
@@ -259,6 +277,7 @@ body div header ul li {
 	padding-left: 20px;
 	padding-top: 20px;
 	padding-bottom: 15px;
+	clear: left;
 }
 
 .sectiondetails {
@@ -323,7 +342,7 @@ body div header ul li {
 	opacity: 0.9;
 }
 
-#aboutdiginfo {
+#aboutdiginfo, #aboutbose, #abouteyebose, #aboutmbose {
 	display: none;
 }
 
@@ -339,6 +358,24 @@ body div header ul li {
 }
 
 #yearsofpioneering, #majorclientspecific, #diginfoacademyspec, #diginfolabsspec, #zoinuxspec, #meijiaspecs, #themanagementteamspec, #bpoexpressspec,
-#diginfoconsultingspec {
+#diginfoconsultingspec, #businessosspecs, #peoplewarespecs, #finestrestaurantspecs {
 	clear: left;
+}
+
+.bosebenefits {
+	margin-left: 50px;
+}
+
+#carousel {
+	width: 100%;
+	text-align: center;
+}
+
+#carousel img {
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	box-shadow: 3px 3px 6px #666;
+	-moz-box-shadow: 3px 3px 6px #666;
+	-webkit-box-shadow: 3px 3px 6px #666;
 }

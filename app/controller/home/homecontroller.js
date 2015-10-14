@@ -15,14 +15,18 @@ Ext.define('Form.controller.home.homecontroller', {
 		if(!companyid) {
 			companyid = '';
 		}
-		Ext.home.Home.getCompanyTpl(companyid,function(resp) {
-			Ext.home.Home.getCompanyTplData(resp.tpldatacode, function(resp2) {
-				var tpl = new Ext.XTemplate(resp.tplarray);
-				tpl.overwrite(Ext.getBody(), resp2);
-			});
-		});
 		
-		    
+		try {
+			Ext.home.Home.getCompanyTpl(companyid,function(resp) {
+				Ext.home.Home.getCompanyTplData(resp.tpldatacode, function(resp2) {
+					var tpl = new Ext.XTemplate(resp.tplarray);
+					tpl.overwrite(Ext.getBody(), resp2);
+				});
+			});
+		} catch(e) {
+			console.log('Home problem.');
+			console.log(e);
+		}    
 			
         this.control({
         	'littleloginform button[action=signin]': {

@@ -263,14 +263,15 @@
 					<cfset colName = columnNameModel[outIndex] >
 					</cfcatch>
 				</cftry>
-				<cftry>
+
+				<cfset cname = evaluate( colName ) />
+				<cfif trim(cname) neq "" >
 					<cfset ArrayAppend( propertyArr, columnNameReal[outIndex] ) >
-					<cfset ArrayAppend( valueArr, decrypt( evaluate( colName ), session.ek ) ) >
-				<cfcatch>
+					<cfset ArrayAppend( valueArr, cname, session.ek ) >
+				<cfelse>
 					<cfset ArrayAppend( propertyArr, columnNameReal[outIndex] ) >
-					<cfset ArrayAppend( valueArr, evaluate( colName ) ) >
-				</cfcatch>
-				</cftry>
+					<cfset ArrayAppend( valueArr, cname ) >
+				</cfif>
 
 			</cfloop>
 		<cfelse>
