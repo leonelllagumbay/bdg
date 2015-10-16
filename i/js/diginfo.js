@@ -6,8 +6,21 @@
 	});
 });*/
 
+Ext.apply(Ext.form.field.VTypes, {
+    captcha:  function(v) {
+			var captchaorig = Ext.ComponentQuery.query('textfield[name=captchatext]')[0].getValue();
+			var captchatype = Ext.ComponentQuery.query('textfield[name=captchainput]')[0].getValue();
+			if(captchaorig != captchatype) {
+				return false;
+			} else {
+				return true;
+			}
+		},
+	    captchaText: 'Wrong captcha. Type the characters above again.'
+});
+
 function openContactUs() {
-	Ext.create('Ext.window.Window', {
+	var wc = Ext.create('Ext.window.Window', {
 	    title: 'We want to hear from you!',
 	    height: 500,
 	    width: 870,
@@ -65,6 +78,22 @@ function openContactUs() {
 	        		name: 'inquiry',
 	        		labelAlign: 'top',
 	        		allowBlank: false
+	        	},{
+	        		xtype: 'displayfield',
+	        		name: 'captcha',
+	        		allowBlank: true,
+	        		value: ''
+	        	},{
+	        		xtype: 'textfield',
+	        		name: 'captchatext',
+	        		hidden: true,
+	        		value: new Date()
+	        	},{
+	        		xtype: 'textfield',
+	        		name: 'captchainput',
+	        		labelAlign: 'top',
+	        		fieldLabel: 'Type the captcha text above',
+	        		vtype: 'captcha'
 	        	}],
 	        	buttons: [{
 	        		text: 'Send',
@@ -104,11 +133,26 @@ function openContactUs() {
 	        		value: '<iframe width="415" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDHXxPiEcgk2q7P9OkWoLs1YhtgcWrxjek&q=City+and+Land+Mega+Plaza"></iframe>'
 	        	},{
 	        		xtype: 'displayfield',
-	        		value: '<a target="_blank" href="https://www.facebook.com/diginfo.imachine"><img src="image/iconfb.jpg"></a>&nbsp;<a target="_blank" href="http://diginfobettersystem.wordpress.com"><img src="image/iconwp.jpg"></a>&nbsp;<a target="_blank" href="https://twitter.com/#!/DIGI_INFO#"><img src="image/icontweeter.jpg"></a>&nbsp;<a target="_blank" href="http://www.linkedin.com/company/2356687?trk=tyah"><img src="image/in.png"></a>'
+	        		value: '<a target="_blank" href="https://www.facebook.com/diginfo.imachine"><img src="image/facebook-logo.png" width="20px"></a>&nbsp;<a target="_blank" href="http://diginfobettersystem.wordpress.com"><img src="image/wordpress.png" width="20px"></a>&nbsp;<a target="_blank" href="https://twitter.com/#!/DIGI_INFO#"><img src="image/twitter.png" width="20px"></a>&nbsp;<a target="_blank" href="http://www.linkedin.com/company/2356687?trk=tyah"><img src="image/linkedin-logo.png" width="20"></a>'
 	        	}]
 	        }]
 	    }]
 	}).show();
+	
+	
+	Ext.Ajax.request({
+	    url: './captcha.cfm',
+	    success: function(response) {
+	    	var response = JSON.parse(response.responseText);
+	    	var clink = response["captchalink"].trim() || response["captchalink"];
+	    	var cstring = response["captchastring"];
+	    	var cdisplay = Ext.ComponentQuery.query('displayfield[name=captcha]')[0];
+	    	cdisplay.setValue(clink);
+	    	var cstringdisp = Ext.ComponentQuery.query('textfield[name=captchatext]')[0];
+	    	cstringdisp.setValue(cstring);
+	    }
+	});
+	
 };
 
 function showaboutus(containerid) {

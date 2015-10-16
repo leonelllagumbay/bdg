@@ -1,6 +1,6 @@
 <CFMAIL
     from="diginfobettersystemnoreply@gmail.com"
-    to="leonelllagumbay@gmail.com"
+    to="niloposo@gmail.com,niloposo@diginfobettersystem.com"
 	subject="Inquiry from DIGINFO Live"
 	type="HTML"
 	username="diginfobettersystemnoreply@gmail.com"

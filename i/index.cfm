@@ -28,7 +28,7 @@
 				<p class ='headlines' id="aboutdiginfosection">About DIGINFO</p>
 				<img id="infoliveeskinmission" src = "image/InfoLive eSkinAbout Us Banner 15Oct2010.JPG" >
 
-				<p class="headlinesections" id="yearsofpioneering">22 Years of Pioneering Philippine IT R&D and Engineering</p>
+				<p class="headlinesections" id="yearsofpioneering">23 Years of Pioneering Philippine IT R&D and Engineering</p>
 				<p class="sectiondetails" id="22yearsofpioneering">The Philippine IT industry is not a big one. And within this small community, just a few Filipino-owned companies do R&D for their own branded products that ferociously compete with those from global technology behemoths such as Microsoft, SAP, IBM and Oracle which are being marketed by their local sales offices.</p>
 				<p ><a id = 'moreaboutdiginfo' href = '#123' onclick="getMoreInfo('pioneer.cfm','22yearsofpioneering','moreaboutdiginfo')">...</a></p>
 
@@ -89,6 +89,11 @@
 			<section>
 				<p id ='whatsnewTitle' class ='headlines'>What's New</p>
 
+				<p class="headlinesections">Introducing: DIGINFO iHiWiP System</p>
+				<p class="sectiondetails" id="whatsnewihiwipdetails">The Cloud has changed the Philippine IT landscape. It's time for DIGINFO to change its course to stay relevant: Introducing DIGINFO iHiWiP System.</p>
+				<p><a id = 'whatsnewihiwip' href = '#345' onclick="getMoreInfo('whatsnewihiwip.cfm','whatsnewihiwipdetails','whatsnewihiwip')">...</a></p>
+
+
 				<p class="headlinesections">BOS/e PayFast: A Cost-Saving Payroll System for Philippine SMEs</p>
 				<p class="sectiondetails" id="bosecostsavingpayrolldetails">With the high cost of business software applications, many Philippine SMEs struggle with Excel-based, if not manual system, when processing their employees' payroll and attendance. Thus, computational errors do occur which often trigger employees' complaints and result in higher overtime cost due to re-processing.</p>
 				<p><a id = 'bosecostsavingpayroll' href = '#345' onclick="getMoreInfo('bosecostsavingpayroll.cfm','bosecostsavingpayrolldetails','bosecostsavingpayroll')">...</a></p>
@@ -124,30 +129,18 @@
 
 			<section>
 				<p id ='whatsnewTitle1' class ='headlines'>Think Ahead</p>
-				<div >
-					<p id = 'newimprovedeforms' class="headlinesections">New, Improved eForms in iBOS/e 2014  Revs Up DIGINFO iPORTAL Workflow </p>
-					<p id = 'eformshaslongbeen' class="sectiondetails">eForms has long been the main app of iBOS/e since </br>
-									  this DIGINFO Web portal platform was introduced in
-									  early 2000.</p>
-					<p id = 'link'><a href = '#98998'>...</a></p>
-				</div>
-				<div >
-					<p id = 'diginfoiportalworkflow' class="headlinesections">Introducing: DIGINFO iPORTAL Workflow</p>
-						<p id = 'withtheintense' class="sectiondetails">With the intense rivalry among industry peers and
-										  increased pressure from government regulatory and
-										  private quality assurance bodies, organizations
-					</p>
-					<p id = 'thinkaheadreadmore'><a href = '#89887'>...</a></p>
-				</div>
-				<div>
-					<p id = 'bmpautomated' class="headlinesections">BPM 101: What Is An Automated Workflow?</p>
-					<p id = 'automatedworkflow' class="sectiondetails">
-						Automated Workflow, which is essentially the backbone of Business Process Management,
-						or BPM for short, is about orchestrating the flow of data, information, knowledge and
-						intelligence  &nbsp; &nbsp;
-					</p>
-				    <p id = 'thinkaheadmore'><a href = '#6354'>...</a></p>
-				</div>
+
+				<p class="headlinesections">New, Improved eForms in iBOS/e 2014  Revs Up DIGINFO iPORTAL Workflow</p>
+				<p class="sectiondetails" id="thinkaheadeformsdetails">eForms has long been the main app of iBOS/e since this DIGINFO Web portal platform was introduced in early 2000</p>
+				<p><a id = "thinkaheadeforms" href="#56454" onclick="getMoreInfo('thinkaheadeforms.cfm','thinkaheadeformsdetails','thinkaheadeforms')">...</a></p>
+
+				<p class="headlinesections">Introducing: DIGINFO iPORTAL Workflow</p>
+				<p class="sectiondetails" id="thinkaheadworkflowdetails">With the intense rivalry among industry peers and increased pressure from government regulatory and private quality assurance bodies, organizations</p>
+				<p><a id = "thinkaheadworkflow" href="#56454" onclick="getMoreInfo('thinkaheadworkflow.cfm','thinkaheadworkflowdetails','thinkaheadworkflow')">...</a></p>
+
+				<p class="headlinesections">BPM 101: What Is An Automated Workflow?</p>
+				<p class="sectiondetails" id="thinkaheadbpmdetails">Automated Workflow, which is essentially the backbone of Business Process Management, or BPM for short, is about orchestrating the flow of data, information, knowledge and intelligence</p>
+				<p><a id = "thinkaheadbpm" href="#56454" onclick="getMoreInfo('thinkaheadbpm.cfm','thinkaheadbpmdetails','thinkaheadbpm')">...</a></p>
 			</section>
 
 			<section>
@@ -269,17 +262,6 @@
 				<p ><a id = 'mbosepw' href = '#2021' onclick="getMoreInfo('mbosepw.cfm','mbosepwdetails','mbosepw')">...</a></p>
 			</section>
 
-			<section id="lastsectionoftextuals">
-				<a target="_blank" href="https://www.facebook.com/diginfo.imachine">
-					<img src="image/iconfb.jpg">
-				</a>
-				<a target="_blank" href="http://diginfobettersystem.wordpress.com">
-					<img src="image/iconwp.jpg">
-				</a>
-				<a target="_blank" href="https://twitter.com/#!/DIGI_INFO#">
-					<img src="image/icontweeter.jpg">
-				</a>
-			</section>
 		</div>
 		<div id="slidercontainer">
 			<article class="slider">
@@ -326,13 +308,27 @@
 			<ul>
 				<li><a id="aboutus" href="#aboutdiginfosection" onclick="showaboutus('aboutdiginfo')">About Us</a></li>
 				<li id="contactus" onclick="openContactUs()">Contact Us</li>
-				<li id="joinus"><a target="_blank" href="http://diginfobettersystem.com/templates/application/?companyname=DIGINFO%20Online%20Com&companycode=DIGINFO&yesrevert=NOREVERT&logopath=http://diginfobettersystem.com/resource/image/companylogo/diginfoicon.png">Join Us</a></li>
+				<li id="joinus"><a target="_blank" href="http://diginfobettersystem.com/templates/application/?companyname=DIGINFO%20Online%20Com&companycode=DIGINFO&yesrevert=NOREVERT&logopath=http://diginfobettersystem.com/resource/image/companylogo/DIGINFO 2013 Logo white background.jpg">Join Us</a></li>
 				<li id="login" onClick="var pwin = Ext.widget('littleloginform'); pwin.show();">Log in</li>
 				<!--- <li id="mypage"><a href='../?bdg=MAINUSRAPPF5038527-9F22-9981-A084244087E398BD'>My Page</a></li> --->
 				<li id="topbose"><a href="#aboutbosesection" onclick="showaboutus('aboutbose')">BOS/e</a></li>
 				<li id="topibose"><a href="#abouteyebosesection" onclick="showaboutus('abouteyebose')">iBOS/e</a></li>
 				<li id="topmbose"><a href="#aboutmbosesection" onclick="showaboutus('aboutmbose')">mBOS/e</a></li>
 			</ul>
+			<div id="lastsectionoftextuals">
+				<a target="_blank" href="https://www.facebook.com/diginfo.imachine">
+					<img id="fb" src="image/facebook-logo.png" width="20px">
+				</a>
+				<a target="_blank" href="http://diginfobettersystem.wordpress.com">
+					<img id="wp" src="image/wordpress.png" width="20px">
+				</a>
+				<a target="_blank" href="https://twitter.com/#!/DIGI_INFO#">
+					<img id="tw" src="image/twitter.png" width="20px">
+				</a>
+				<a target="_blank" href="http://www.linkedin.com/company/2356687?trk=tyah">
+					<img src="image/linkedin-logo.png" width="20">
+				</a>
+			</div>
 		</header>
 
 		<nav>

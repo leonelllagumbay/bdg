@@ -285,18 +285,18 @@ body div header ul li {
 }
 
 #lastsectionoftextuals {
-	height: 95px;
-	width: 100%;
-	padding-top: 70px;
-	/* background-color: rgb(248,212,0); */
+	position: absolute;
+	width: 100px;
+	right: 6px;
+	top: 4px;
+	z-index: 12000;
 }
 
 #lastsectionoftextuals img {
-	position: absolute;
-	height: 25px;
-	width: 25px;
-	bottom: 30px;
+	height: 20px;
+	width: 20px;
 }
+
 
 #textualreading a:link {
 	text-decoration: none;
