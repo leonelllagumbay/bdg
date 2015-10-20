@@ -6,5 +6,4 @@
 <cfcontent reset="true" />
 <cfoutput>#apiScript#</cfoutput>
 
-
 <cfsetting showdebugoutput="false"  />

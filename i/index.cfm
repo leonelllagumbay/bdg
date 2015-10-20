@@ -145,21 +145,19 @@
 
 			<section>
 				<p class ='headlines'>Build IT Now</p>
-				<div id = 'imachinecutdown'>
-					<p id = 'title' class="headlinesections">How Does iMACHINE Cut Down IT Investment?</p>
-					<p id = 'itdepartment' class="sectiondetails">Traditionally, the IT department of a mid-size company would purchase as many servers and desktops.</p>
-					<p id = 'builtitnowmore0'><a href = '#11223'>...</a></p>
-				</div>
-				<div>
-					<p id = 'withoutprogramming' class="headlinesections">How Does iBOS/e Build A Company Portal Without Programming?</p>
-					<p id = 'whentheinternetbloomed' class="sectiondetails">When the Internet boomed in early 2000, most companies hired web designers and web.</p>
-					<p id = 'builditnowmore1'><a href = '#45675'>...</a></p>
-				</div>
-				<div>
-					<p id = 'eformhelpyourteam' class="headlinesections">How Can iBOS/e eForm Help Keep Your Team Run in Clockwork?
-					<p id = 'somanyopportunities' class="sectiondetails">So many opportunities are lost when things run in slow, approaching suspended motion.</p>
-					<p id = 'builditnowmore2'><a href = '#98787'>...</a></p>
-				</div>
+
+				<p class="headlinesections">How Does iMACHINE Cut Down IT Investment?</p>
+				<p class="sectiondetails" id="builditnowimachinecutdowndetails">Traditionally, the IT department of a mid-size company would purchase as many servers and desktops.</p>
+				<p><a id = "builditnowimachinecutdown" href="#112233" onclick="getMoreInfo('builditnowimachinecutdown.cfm','builditnowimachinecutdowndetails','builditnowimachinecutdown')">...</a></p>
+
+				<p class="headlinesections">How Does iBOS/e Build A Company Portal Without Programming?</p>
+				<p class="sectiondetails" id="builditnowwithoutprogdetails">When the Internet boomed in early 2000, most companies hired web designers and web.</p>
+				<p><a id = "builditnowwithoutprog" href="#445566" onclick="getMoreInfo('builditnowwithoutprog.cfm','builditnowwithoutprogdetails','builditnowwithoutprog')">...</a></p>
+
+				<p class="headlinesections">How Can iBOS/e eForm Help Keep Your Team Run in Clockwork?</p>
+				<p class="sectiondetails" id="builditnowrunclockworkdetails">So many opportunities are lost when things run in slow, approaching suspended motion.</p>
+				<p><a id = "builditnowrunclockwork" href="#778899" onclick="getMoreInfo('builditnowrunclockwork.cfm','builditnowrunclockworkdetails','builditnowrunclockwork')">...</a></p>
+
 			</section>
 
 			<section id="aboutbose">

@@ -16,7 +16,7 @@
 			<cfspreadsheet
 			    action="read"
 			    src = "#sourceFile#"
-			    columns = "1-7"
+			    columns = "1-13"
 			    excludeHeaderRow = "true"
 			    headerrow = "1"
 			    query = "nameExl"
@@ -27,9 +27,15 @@
 			 <cfset requiredColumns[2] = "SUBCOMPANYCODE" >
 			 <cfset requiredColumns[3] = "USERTYPE" >
 			 <cfset requiredColumns[4] = "USERID" >
-			 <cfset requiredColumns[5] = "PERSONNELIDNO" >
-			 <cfset requiredColumns[6] = "FIRSTNAME" >
-			 <cfset requiredColumns[7] = "LASTNAME" >
+			 <cfset requiredColumns[5] = "GUID" >
+			 <cfset requiredColumns[6] = "PERSONNELIDNO" >
+			 <cfset requiredColumns[7] = "FIRSTNAME" >
+			 <cfset requiredColumns[8] = "LASTNAME" >
+			 <cfset requiredColumns[9] = "MIDDLENAME" >
+			 <cfset requiredColumns[10] = "NICKNAME" >
+			 <cfset requiredColumns[11] = "PAGIBIGNUMBER" >
+			 <cfset requiredColumns[12] = "SSSNUMBER" >
+			 <cfset requiredColumns[13] = "TIN" >
 
 
 			 <cfloop array="#requiredColumns#" index="rCol" >
@@ -51,6 +57,12 @@
 					 <cfset form["C-PERSONNELIDNO"] = nameExl.PERSONNELIDNO />
 					 <cfset form["B-FIRSTNAME"] = nameExl.FIRSTNAME />
 					 <cfset form["B-LASTNAME"] = nameExl.LASTNAME />
+					 <cfset form["B-MIDDLENAME"] = nameExl.MIDDLENAME />
+					 <cfset form["B-NICKNAME"] = nameExl.NICKNAME />
+					 <cfset form["B-PAGIBIGNUMBER"] = nameExl.PAGIBIGNUMBER />
+					 <cfset form["B-SSSNUMBER"] = nameExl.SSSNUMBER />
+					 <cfset form["B-TIN"] = nameExl.TIN />
+					 <cfset form['A-GUID'] = nameExl.GUID />
 
 					 	<cfset form.USERACTION = "NEW" />
 
@@ -74,7 +86,7 @@
 						<cfset form['A-PWDCOUNTFAILEDATTEMPT'] = "0" />
 						<cfset form['A-DATELASTUPDATE'] = "#CreateODBCDateTime(now())#" />
 						<cfset form['A-RECDATECREATED'] = "#CreateODBCDateTime(now())#" />
-						<cfset form['A-GUID'] = nameExl.USERID />
+
 						<cfset form['A-MAXDRIVESIZE'] = "70000" />
 						<cfset form['B-RECDATECREATED'] = "#CreateODBCDateTime(now())#" />
 						<cfset form['B-DATELASTUPDATE'] = "#CreateODBCDateTime(now())#" />

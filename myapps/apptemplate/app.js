@@ -1,5 +1,5 @@
 Ext.Loader.setConfig({enabled: true});
-Ext.Loader.setPath('Ext.ux', '../../../scripts/extjs/examples/ux');
+Ext.Loader.setPath('Ext.ux', '../../../scripts/ext-4.2.2/examples/ux');
 
 Ext.application({
 	requires: [
