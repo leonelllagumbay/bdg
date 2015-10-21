@@ -50,12 +50,25 @@ Ext.define('Form.view.file.fileGrid', {
 		},{
 			text: 'Delete',
 			action: 'delete'
+		},{
+			xtype: 'tbspacer',
+			width: 50
+		},{
+			text: 'Gallery',
+			action: 'gallery'
 		}];
 		this.columns = [{
             xtype: 'rownumberer',
             width: 60,
             sortable: false
 	    },{ 
+			text: 'Folder Name',  
+			dataIndex: 'FOLDERNAME',
+			filterable: true,
+			sortable: true,
+			width: 100,
+			hidden: true
+		},{ 
 			text: 'Name',  
 			dataIndex: 'FILENAME',
 			filterable: true,
@@ -94,8 +107,29 @@ Ext.define('Form.view.file.fileGrid', {
 			 width: 47,
 			 dataIndex: 'FILEID',
 			 filterable: true,
-			 renderer: function(value,p,record) {return Ext.String.format('<a target=\'_new\' href=\'.\/unDB\/document\/'+ GLOBAL_VARS_DIRECT.COMPANYCODE +'\/'+ GLOBAL_VARS_DIRECT.USERID +'\/{0}\'><b>Open<\/b><\/a>', value);}
-		  },{
+			 renderer: function(value,p,record) {
+				 if (record.data['SHAREDBYUSERID']) {
+					 var useriddata = record.data['SHAREDBYUSERID'];
+				 } else {
+					 var useriddata = GLOBAL_VARS_DIRECT.USERID;
+				 }
+				 return Ext.String.format('<a target=\'_new\' href=\'.\/unDB\/document\/'+ GLOBAL_VARS_DIRECT.COMPANYCODE +'\/'+ useriddata +'\/{0}\'><b>Open<\/b><\/a>', value);
+			 }
+		  },{ 
+			text: 'Shared By',  
+			dataIndex: 'SHAREDBYNAME',
+			filterable: true,
+			sortable: true,
+			width: 150,
+			hidden: true
+		},{ 
+			text: 'Shared By User ID',  
+			dataIndex: 'SHAREDBYUSERID',
+			filterable: true,
+			sortable: true,
+			width: 50,
+			hidden: true
+		},{
 			  text: 'FILEEXTENSION',
 			  dataIndex: 'FILEEXTENSION',
 			  hidden: true,

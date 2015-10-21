@@ -3,6 +3,7 @@
 	margin: 0px;
 	color: #616161;
 	font-weight: bold;
+	font-family: Helvetica;
 }
 
 #diginfoiconsep {
@@ -103,6 +104,7 @@ body div header ul li {
 #joinus a {
 	text-decoration: none;
 	color: rgb(22,147,167);
+	font: 20px Helvetica;
 }
 
 #mypage a {
@@ -113,16 +115,19 @@ body div header ul li {
 #topbose a {
 	text-decoration: none;
 	color: rgb(22,147,167);
+	font: 20px Helvetica;
 }
 
 #topibose a {
 	text-decoration: none;
 	color: rgb(22,147,167);
+	font: 20px Helvetica;
 }
 
 #topmbose a {
 	text-decoration: none;
 	color: rgb(22,147,167);
+	font: 20px Helvetica;
 }
 
 #mainbody div header ul li:hover, #joinus a:hover, #mypage a:hover, #aboutus:hover, #topbose a:hover,
@@ -390,4 +395,8 @@ body div header ul li {
 	box-shadow: 3px 3px 6px #666;
 	-moz-box-shadow: 3px 3px 6px #666;
 	-webkit-box-shadow: 3px 3px 6px #666;
+}
+
+#wewanttohearfromyou {
+	color: #fff;
 }

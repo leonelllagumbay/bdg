@@ -68,8 +68,29 @@ component  output=false persistent=false ExtDirect=true
 				tmpresult['EFORMID'] 	= dsource[i].getEFORMID();
 				tmpresult['PROCESSID'] 	= dsource[i].getPROCESSID();
 
+				if (trim(folderid) eq "SHAREDFILES") {
+					df = EntityLoad("EGRGFOLDER", dsource[i].getFOLDERIDFK(), true);
+					tmpresult['FOLDERNAME'] = df.getFOLDERNAME();
+
+					var dname = "SELECT FIRSTNAME,LASTNAME,GUID FROM CMFPA WHERE PERSONNELIDNO = '#dsource[i].getPERSONNELIDNO()#'";
+					var qryservice = new query();
+					qryservice.setDatasource("#session.company_dsn#");
+  					qryservice.setName("qryname");
+					qryservice.setSQL(dname);
+					var dresult = qryservice.execute();
+					dresulRec = dresult.getResult();
+					for (var g = 1; g <= 1; g++) {
+						tmpresult['SHAREDBYNAME'] = dresulRec['FIRSTNAME'][g] & " " & dresulRec['LASTNAME'][g];
+
+						var duserid = EntityLoad("GMFPEOPLE", { GUID=#dresulRec['GUID'][g]# }, true);
+						tmpresult['SHAREDBYUSERID'] = duserid.getUSERID();
+					}
+
+				}
+
 				ArrayAppend(resultArr,tmpresult);
 			}
+
 			dsourceCount = ORMExecuteQuery("SELECT COUNT(*) AS TOTALREC FROM EGRGFILE #PreserveSingleQuotes(WHERE)#",true);
 			rootstuct['totalCount'] = dsourceCount;
 			rootstuct['topics'] = resultArr;

@@ -21,7 +21,7 @@ Ext.apply(Ext.form.field.VTypes, {
 
 function openContactUs() {
 	var wc = Ext.create('Ext.window.Window', {
-	    title: 'We want to hear from you!',
+	    title: '<span id="wewanttohearfromyou">We want to hear from you!</span>',
 	    height: 500,
 	    width: 870,
 	    layout: 'fit',

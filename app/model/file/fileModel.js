@@ -48,5 +48,14 @@ Ext.define('Form.model.file.fileModel', {
 	},{
 		name: 'PROCESSID',
 		type: 'string'
+	},{
+		name: 'FOLDERNAME',
+		type: 'string'
+	},{
+		name: 'SHAREDBYNAME',
+		type: 'string'
+	},{
+		name: 'SHAREDBYUSERID',
+		type: 'string'
 	}]
 })

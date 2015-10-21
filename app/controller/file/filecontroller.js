@@ -111,8 +111,61 @@ Ext.define('Form.controller.file.filecontroller', {
 			},
 			'shareform button[action=undoshare]': {
 				click: this.deleteSharedFile
+			},
+			
+			'filegrid button[action=gallery]': {
+				click: this.galleryShow
+			},
+		});
+     },
+     
+     galleryShow: function(btn) {
+
+    	 var fileRec = Ext.ComponentQuery.query('filegrid')[0].getStore(); 
+    	 var selRec = fileRec.data.items;
+    	 var dataArr = [];
+    	 
+    	 for (var a = 0; a < selRec.length; a++) {
+    		 if (selRec[a].data['SHAREDBYUSERID']) {
+				 var useriddata = selRec[a].data['SHAREDBYUSERID'];
+			 } else {
+				 var useriddata = GLOBAL_VARS_DIRECT.USERID;
+			 }
+    		 var linkObj = {};
+    		 linkObj.href = Ext.String.format('./unDB/document/'+ GLOBAL_VARS_DIRECT.COMPANYCODE +'/'+ useriddata + '/{0}', selRec[a].data['FILEID']);
+    		 linkObj.title = selRec[a].data['FILECAPTION'];
+    		 dataArr.push(linkObj);
+    	 }
+
+    	 $('.fancybox').fancybox();
+    	 
+    	 $(".opengalleryshared").fancybox({
+			wrapCSS    : 'fancybox-custom',
+			closeClick : true,
+			openEffect : 'none',
+			helpers : {
+				title : {
+					type : 'inside'
+				},
+				overlay : {
+					css : {
+						'background' : 'rgba(238,238,238,0.85)'
+					}
+				}
 			}
 		});
+
+		var source =  dataArr;
+						
+		$.fancybox.open(source, {
+			helpers : {
+				thumbs : {
+					width: 75,
+					height: 50
+				}
+			}
+		});
+
      },
      
      assignUserBeforeLoad: function(s, a) {
@@ -232,18 +285,37 @@ Ext.define('Form.controller.file.filecontroller', {
      
      treeSelected: function(disrow, rec, ind) {
 		 var fg = Ext.ComponentQuery.query('filegrid')[0];
+		 
 		 if (rec.data.FOLDERID == "SHAREDFILES") { // hide upload, share, move, and delete buttons
 			 fg.down('button[action=uploadfile]').setVisible(false);
 			 fg.down('button[action=copy]').setVisible(false);
 			 fg.down('button[action=share]').setVisible(false);
 			 fg.down('button[action=move]').setVisible(false);
 			 fg.down('button[action=delete]').setVisible(false);
+			 
+			 // show folder name and shared by column
+			 var fn = Ext.ComponentQuery.query('gridcolumn[dataIndex=FOLDERNAME]')[0];
+			 fn.show();
+			 fn = Ext.ComponentQuery.query('gridcolumn[dataIndex=SHAREDBYNAME]')[0];
+			 fn.show();
+			 
+			 fn = Ext.ComponentQuery.query('gridcolumn[dataIndex=DATELASTUPDATE]')[0];
+			 fn.hide();
 		 } else {
 			 fg.down('button[action=uploadfile]').setVisible(true);
 			 fg.down('button[action=copy]').setVisible(true);
 			 fg.down('button[action=share]').setVisible(true);
 			 fg.down('button[action=move]').setVisible(true);
 			 fg.down('button[action=delete]').setVisible(true);
+			 
+			// hide folder name and shared by column
+			 var fn = Ext.ComponentQuery.query('gridcolumn[dataIndex=FOLDERNAME]')[0];
+			 fn.hide();
+			 fn = Ext.ComponentQuery.query('gridcolumn[dataIndex=SHAREDBYNAME]')[0];
+			 fn.hide();
+			 
+			 fn = Ext.ComponentQuery.query('gridcolumn[dataIndex=DATELASTUPDATE]')[0];
+			 fn.show();
 		 }
 		 var filestore = fg.getStore();
 		 filestore.load({
