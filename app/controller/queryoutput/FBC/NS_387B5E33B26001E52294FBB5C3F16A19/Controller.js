@@ -268,7 +268,7 @@ Ext.define('Form.controller.queryoutput.FBC.NS_387B5E33B26001E52294FBB5C3F16A19.
 					
 					var dgrid = b.up('grid');
 					dgrid.getEl().mask('Exporting...');
-					var qrytitle = 'Company News';
+					var qrytitle = 'GMA News Manila';
 					var qrycode = '387B5E33-B260-01E5-2294FBB5C3F16A19';
 					Ext.NS_387B5E33B26001E52294FBB5C3F16A19.Data.exportGridToExcel(qrycode, qrytitle, function(res) {
 						dgrid.getEl().unmask();

@@ -144,7 +144,7 @@ component accessors=true output=false persistent=false {
 		var dojbectidfk = "APPLICATION";
 		var dscriptrequires = scriptrequired;
 
-		var dnameortitle = "iBOS/e Liveboard";
+		var dnameortitle = "iBOS/e LiveBoard";
 		var dapporder = 1;
 		var nextnamespaceArr = ArrayNew(1);
 		ArrayAppend(nextnamespaceArr, "header");

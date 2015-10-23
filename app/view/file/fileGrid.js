@@ -64,8 +64,8 @@ Ext.define('Form.view.file.fileGrid', {
 	    },{ 
 			text: 'Folder Name',  
 			dataIndex: 'FOLDERNAME',
-			filterable: true,
-			sortable: true,
+			filterable: false,
+			sortable: false,
 			width: 100,
 			hidden: true
 		},{ 
@@ -118,15 +118,15 @@ Ext.define('Form.view.file.fileGrid', {
 		  },{ 
 			text: 'Shared By',  
 			dataIndex: 'SHAREDBYNAME',
-			filterable: true,
-			sortable: true,
+			filterable: false,
+			sortable: false,
 			width: 150,
 			hidden: true
 		},{ 
 			text: 'Shared By User ID',  
 			dataIndex: 'SHAREDBYUSERID',
-			filterable: true,
-			sortable: true,
+			filterable: false,
+			sortable: false,
 			width: 50,
 			hidden: true
 		},{

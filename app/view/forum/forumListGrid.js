@@ -18,6 +18,22 @@ Ext.define('Form.view.forum.forumListGrid', {
 			}]
 		}];
 	 
+		this.tbar = [{
+			xtype: 'displayfield',
+			value: '<a target="_blank" href="./?bdg=MAINUSRAPPF5038527-9F22-9981-A084244087E398BD&eformid=F89979C8-0E6A-8F52-5F8AD90C599823B1&actiontype=getmyeforms&myvar=hi">Manage</a>'
+		},{
+			xtype: 'displayfield',
+			value: '&nbsp;&nbsp;'
+		},{
+			xtype: 'displayfield',
+			value: '<a target="_blank" href="./?bdg=MAINUSRAPPF5038527-9F22-9981-A084244087E398BD&eformid=F9261928-C202-35B1-40155364B4DA3415&actiontype=getmyeforms&myvar=hi">User</a>'
+		},{
+			xtype: 'displayfield',
+			value: '&nbsp;&nbsp;'
+		},{
+			xtype: 'displayfield',
+			value: '<a target="_blank" href="./?bdg=MAINUSRAPPF5038527-9F22-9981-A084244087E398BD&eformid=F99DDBCE-065D-AAE0-7A299673A11F3A78&actiontype=getmyeforms&myvar=hi">User by Role</a>'
+		}];
 	    
 		this.store = 'forum.forumListStore';
 		

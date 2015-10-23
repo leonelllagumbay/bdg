@@ -4,7 +4,7 @@
 				<cfabort>
 			</cfif>
 			<head>
-			    <title>iBOS/e Liveboard</title>
+			    <title>iBOS/e LiveBoard</title>
 				<link rel='icon' type='image/ico' href='../../../../resource/image/appicon/diginfologo.ico'>
 				<cfoutput><link rel='stylesheet' type='text/css' href='../../../../scripts/ext-4.2.2/resources/css/#session.companycsstheme#.css'></cfoutput>
 			    <script type='text/javascript' src='../../../../scripts/ext-4.2.2/ext-all.js'></script>

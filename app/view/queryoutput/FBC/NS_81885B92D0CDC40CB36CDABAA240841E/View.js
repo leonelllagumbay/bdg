@@ -4,7 +4,7 @@ Ext.define('Form.view.queryoutput.FBC.NS_81885B92D0CDC40CB36CDABAA240841E.View',
 	loadMask: true,
 	multiSelect: true,
 	title: 'Google News',
-	width: 500,
+	width: 600,
 	height: 600,
 	padding: 10,
 

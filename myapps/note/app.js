@@ -60,7 +60,7 @@ Ext.application({
 		        id: 'center-region-note-content',
 		        items: [{
 		        	id: 'notecontent',
-		        	html: '<b>Test</b>',
+		        	html: '<b></b>',
 		        	padding: 8
 		        }]
 		    }],

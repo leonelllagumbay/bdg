@@ -278,6 +278,8 @@
                     PAGIBIGNUMBER,
                     REFERREDBY,
                     SSSNUMBER,
+					PHILHEALTHNUMBER,
+					EXPECTEDSALARY,
                     STARTINGSALARY,
                     TIN,
                     EMAILADD,
@@ -311,6 +313,7 @@
         <cfset PAGIBIGNUMBER         = '#PAGIBIGNUMBER#'>
         <cfset SOURCEREFERREDBY      = '#REFERREDBY#'>
         <cfset SSSNUMBER             = '#SSSNUMBER#'>
+		<cfset PHILHEALTHNUMBER      = '#PHILHEALTHNUMBER#'>
         <cfset EXPECTEDSALARY        = '#EXPECTEDSALARY#'>
         <cfset TINNUMBER             = '#TIN#'>
         <cfset EMAILADDRESS          = '#EMAILADD#'>

@@ -20,7 +20,7 @@ Ext.define('Form.view.queryoutput.FBC.NS_48ABB0BFFB9D56789988D6F49F6E3E35.View',
 	'<p><b>Day:</b>  {egintestquery-ATEXT}</h1></p>',
     '<p><b>Pressure:</b>  {egintestquery-AFLOAT}</p></br>',
     '<p><b>Humidity:</b>  {egintestquery-ANUMBER}</p>'],actionend: ''	}],
-    columns: [{text: 'Grouped Header', columns: [{
+    columns: [{
 		text: 'dt',
 		dataIndex: 'egintestquery-ASTRING',
 		filterable: true,
@@ -35,7 +35,7 @@ Ext.define('Form.view.queryoutput.FBC.NS_48ABB0BFFB9D56789988D6F49F6E3E35.View',
 		sortable: true,
 		width: 130,
 		action: '9E9F6A894BDC6F7C05F498EF14E528B6'
-	}]},{
+	},{
 		text: 'Pressure',
 		dataIndex: 'egintestquery-AFLOAT',
 		filterable: true,

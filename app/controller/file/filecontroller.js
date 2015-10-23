@@ -126,13 +126,17 @@ Ext.define('Form.controller.file.filecontroller', {
     	 var dataArr = [];
     	 
     	 for (var a = 0; a < selRec.length; a++) {
+    		 var dfileid = selRec[a].data['FILEID'];
+    		 var rex = /(?:png)$|(?:jpg)$|(?:jpeg)$|(?:jfif)$|(?:tiff)$|(?:gif)$|(?:bmp)$|(?:ppm)$|(?:pgm)$|(?:pbm)$|(?:pnm)$|(?:webp)$|(?:hdr)$|(?:bpg)$|(?:svg)$|(?:ico)$|(?:webp)$|(?:vml)$/;
+    		 if(!rex.test(dfileid)) continue;
+    		 
     		 if (selRec[a].data['SHAREDBYUSERID']) {
 				 var useriddata = selRec[a].data['SHAREDBYUSERID'];
 			 } else {
 				 var useriddata = GLOBAL_VARS_DIRECT.USERID;
 			 }
     		 var linkObj = {};
-    		 linkObj.href = Ext.String.format('./unDB/document/'+ GLOBAL_VARS_DIRECT.COMPANYCODE +'/'+ useriddata + '/{0}', selRec[a].data['FILEID']);
+    		 linkObj.href = Ext.String.format('./unDB/document/'+ GLOBAL_VARS_DIRECT.COMPANYCODE +'/'+ useriddata + '/{0}', dfileid);
     		 linkObj.title = selRec[a].data['FILECAPTION'];
     		 dataArr.push(linkObj);
     	 }

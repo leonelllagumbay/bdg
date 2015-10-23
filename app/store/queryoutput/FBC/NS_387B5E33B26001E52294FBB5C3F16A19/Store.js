@@ -8,7 +8,7 @@ Ext.define('Form.store.queryoutput.FBC.NS_387B5E33B26001E52294FBB5C3F16A19.Store
 				type: 'ajax',
 				reader: { type: 'xml', record: 'item' },
 				
-				url: 'http://localhost:8500/data/xml/rss.cfm?rssurl=http://www.gmanetwork.com/news/rss/news',
+				url: 'http://localhost:8500/data/xml/rss.cfm?rssurl=http://www.gmanetwork.com/news/rss/news/metro',
 				idParam: 'ID'
 			}
 		});

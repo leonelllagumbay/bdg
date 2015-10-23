@@ -296,7 +296,7 @@
 		</article> --->
 		<header>
 			<h1>
-				<img id="diginfoiconsep" src="../resource/image/appicon/diginfologo.ico">
+				<a href='../?bdg=MAINUSRAPPF5038527-9F22-9981-A084244087E398BD'><img id="diginfoiconsep" src="../resource/image/appicon/diginfologo.ico"></a>
 				<span id="companyname"><a href="#carousel"><img src="image/diginfo2.png"/></a></span>
 				<span id="companysloganbetter">better</span>
 				<span id="companyslogansystem">system</span>

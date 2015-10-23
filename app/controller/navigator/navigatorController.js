@@ -628,7 +628,7 @@ Ext.define('Form.controller.navigator.navigatorController', {
 			themenu.up('panel').setDisabled(false);
 			for (a = 0; a < resp.length; a++) {
 				var dtext = resp[a]["text"];
-				if (dtext == "iBOS/e Liveboard") {
+				if (dtext == "iBOS/e LiveBoard") {
 					var liveboarmenu = themenu.up('panel').down('menu[name=myliveboard]');
 					liveboarmenu.add(resp[a]["menu"]);
 					break;

@@ -43,7 +43,7 @@
 			launch: function(){
 				console.log('liveboard app launched');
 				Ext.create('Ext.panel.Panel', {
-				 	title: 'Liveboard Blue (Chart)',  
+				 	title: 'Charts',  
 				 	
 					layout: {
 						type: 'table',
