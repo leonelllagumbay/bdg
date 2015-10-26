@@ -10,7 +10,7 @@ Ext.define('Form.view.navigator.chatWin', {
 	collapsible: true,
 	constrain: true,
 	maxHeight: 400,
-	maxWidth: 500,
+	maxWidth: 250,
 	minHeight: 240,
 	minWidth: 250,
 	region: 'south',

@@ -500,9 +500,13 @@ Ext.define('Form.controller.navigator.navigatorController', {
 	},
 	
 	myNetworkwasClicked: function(themenu, theitem) {
+		
+		if(typeof theitem === 'undefined') return; 
+		
 		if(theitem.xtype == 'header') {
 			return true;
 		}
+		
 		var winexist = Ext.ComponentQuery.query('window[id='+ theitem.id + ']');
 		if(winexist.length > 0) {
 			return true;

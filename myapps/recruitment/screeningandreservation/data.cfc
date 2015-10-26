@@ -16,7 +16,7 @@
 	           A.FIRSTNAME 			AS A_FIRSTNAME,
 	           A.LASTNAME 			AS A_LASTNAME,
 	           A.MIDDLENAME 		AS A_MIDDLENAME,
-	           A.STARTINGSALARY 	AS A_STARTINGSALARY,
+	           A.EXPECTEDSALARY 	AS A_EXPECTEDSALARY,
 	           A.WORKEXPRATING 		AS A_WORKEXPRATING,
 	           A.APPLICATIONDATE 	AS A_APPLICATIONDATE,
 	           C.DESCRIPTION 		AS C_DESCRIPTION,
@@ -208,8 +208,8 @@
 		<cfset tmpresult['A_FIRSTNAME']         = A_FIRSTNAME 		>
 		<cfset tmpresult['A_LASTNAME']          = A_LASTNAME  		>
 		<cfset tmpresult['A_MIDDLENAME']        = A_MIDDLENAME  	>
-		<cfset tmpresult['A_STARTINGSALARY']    = A_STARTINGSALARY  >
-		<cfset tmpresult['A_WORKEXPRATING']     = A_WORKEXPRATING  	>
+		<cfset tmpresult['A_EXPECTEDSALARY']    = A_EXPECTEDSALARY  >
+		<cfset tmpresult['A_WORKEXPRATING']     = A_WORKEXPRATING   	>
 		<cfset tmpresult['A_APPLICATIONDATE']   = A_APPLICATIONDATE >
 		<cfset tmpresult['C_DESCRIPTION']       = C_DESCRIPTION  	>
 		<cfset tmpresult['D_DESCRIPTION']       = D_DESCRIPTION  	>
@@ -717,8 +717,8 @@
     			   C.DESCRIPTION 		AS 'Position First Priority',
 		           D.DESCRIPTION 		AS 'Position Second Priority',
 		           E.DESCRIPTION 		AS 'Position Third Priority',
-		           A.WORKEXPRATING 		AS 'Expected Salary',
-		           A.STARTINGSALARY 	AS 'Current Salary',
+		           A.EXPECTEDSALARY  	AS 'Expected Salary',
+		           A.WORKEXPRATING   	AS 'Current Salary',
 		           A.APPLICATIONDATE 	AS 'Date of Application',
 		           A.REFERENCECODE 		AS 'Reference Code',
 		           A.FIRSTNAME 			AS 'First Name',

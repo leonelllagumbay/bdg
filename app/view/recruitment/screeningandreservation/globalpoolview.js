@@ -87,12 +87,12 @@ Ext.define('Form.view.recruitment.screeningandreservation.globalpoolview', {
 		    width: 300
 		  },{
 		    text: 'Expected Salary',
-		    dataIndex: 'A_WORKEXPRATING',
+		    dataIndex: 'A_EXPECTEDSALARY',
 		    width: 100,
 			filterable: true
 		  },{
 		    text: 'Current Salary',
-		    dataIndex: 'A_STARTINGSALARY',
+		    dataIndex: 'A_WORKEXPRATING',
 		    width: 100,
 			filterable: true
 		  },{

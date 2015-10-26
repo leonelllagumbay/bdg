@@ -153,7 +153,7 @@
                       <cfqueryparam cfsqltype="cf_sql_varchar" value="#CONTACTADDRESS2#"/>,
                       <cfqueryparam cfsqltype="cf_sql_varchar" value="#CONTACTADDRESS3#"/>,
                       <cfqueryparam cfsqltype="cf_sql_date" value="#ACREXPIRATIONDATE#"/>,
-					  <cfqueryparam cfsqltype="cf_sql_date" value="#ACRNUMBER#"/>,
+					  <cfqueryparam cfsqltype="cf_sql_varchar" value="#ACRNUMBER#"/>,
                       <cfqueryparam cfsqltype="cf_sql_varchar" value="#REFERENCECODE#"/> );
    </cfquery>
 </cfloop>

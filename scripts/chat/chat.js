@@ -70,7 +70,7 @@
 									id: 'typing'+ msgdata.userid,
 				                    value: '<i style="font-size: .9em;">'+ msgdata.firstname + ' is typing...</i>',
 									padding: 5,
-									width: '100%'
+									width: 200
 							}]);
 							
 							var d = myPanel.body.dom;
@@ -99,7 +99,7 @@
 						if(msgdata.userid == GLOBAL_VARS_DIRECT.USERID) {
 							var thevalue = "<li style='list-style: none; text-align: right' title='"+ timenow +"'><span style='font-weight:bold;'>"+ msgdata.mymessage +"</span></li>";
 						} else {
-							var thevalue = "<li style='list-style: none; text-align: left;' title='"+ timenow +"'><img style='padding-left: 5px;' width='25px' height='25px' src='"+ msgdata.myprofilepic +"'><span>"+ msgdata.mymessage +"</span></li>";
+							var thevalue = "<li style='list-style: none; text-align: left;' title='"+ timenow +"'><img style='float: left; margin-right: 5px;' width='25px' height='25px' src='"+ msgdata.myprofilepic +"'><span>"+ msgdata.mymessage +"</span></li>";
 						}
 						
 						var myPanel = winexist[0].down('panel');
@@ -108,7 +108,7 @@
 								xtype: 'displayfield',
 			                    value: thevalue,
 								padding: 5,
-								width: '100%'
+								width: 200
 						}]);
 						
 						var d = myPanel.body.dom;
@@ -135,7 +135,7 @@
 						if(msgdata.userid == GLOBAL_VARS_DIRECT.USERID) {
 							var thevalue = "<li style='list-style: none; text-align: right' title='"+ timenow +"'><span style='font-weight:bold;'>"+ msgdata.mymessage +"</span></li>";
 						} else {
-							var thevalue = "<li style='list-style: none; text-align: left;' title='"+ timenow +"'><img style='padding-left: 5px;' width='25px' height='25px' src='"+ msgdata.myprofilepic +"'><span>"+ msgdata.mymessage +"</span></li>";
+							var thevalue = "<li style='list-style: none; text-align: left;' title='"+ timenow +"'><img style='float: left; margin-right: 5px;' width='25px' height='25px' src='"+ msgdata.myprofilepic +"'><span>"+ msgdata.mymessage +"</span></li>";
 						}
 						//thevalue = theLeftContent + ' ' + msgdata.mymessage + '<span><i>(' + timenow + ')</i></span>';
 						var myPanel = mychatwin.down('panel');
@@ -144,7 +144,7 @@
 								xtype: 'displayfield',
 			                    value: thevalue,
 								padding: 5,
-								width: '100%'
+								width: 200
 						}]);
 						var d = myPanel.body.dom;
 						myPanel.body.scroll("b", d.scrollHeight);
@@ -168,7 +168,7 @@
 									xtype: 'displayfield',
 				                    value: thevalue,
 									padding: 5,
-									width: '100%'
+									width: 200
 							}]);
 							var d = myPanelb.body.dom;
 							myPanelb.body.scroll("b", d.scrollHeight);
@@ -177,8 +177,11 @@
 			} else if(type == 'ihaveanimportantmsg') {
 				
 			} else if(type == 'ihaveseenit') {
+				console.log("i have seen it");
+				console.log(msgdata.recipientuserid, msgdata.companycode)
 				if(msgdata.recipientuserid == GLOBAL_VARS_DIRECT.USERID && msgdata.companycode == GLOBAL_VARS_DIRECT.COMPANYCODE) { //for me
 					var winexist = Ext.ComponentQuery.query('window[id='+ msgdata.userid + ']');
+					console.log('win exist', winexist);
 					if(winexist.length > 0) {
 						var myPanel = winexist[0].down('panel');
 						myPanel.remove('typing'+msgdata.userid);
@@ -187,7 +190,7 @@
 								id: 'typing'+ msgdata.userid,
 			                    value: '<i style="font-size: .9em;">Seen ' + msgdata.receiveddatetime +'</i>',
 								padding: 5,
-								width: '100%'
+								width: 200
 						}]);
 						var d = myPanel.body.dom;
 						myPanel.body.scroll("b", d.scrollHeight);

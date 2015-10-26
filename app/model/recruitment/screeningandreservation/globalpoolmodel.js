@@ -12,7 +12,7 @@ Ext.define('Form.model.recruitment.screeningandreservation.globalpoolmodel', {
 		'C_DESCRIPTION',
 		'D_DESCRIPTION',
 		{
-			name: 'A_STARTINGSALARY',
+			name: 'A_EXPECTEDSALARY',
 			type: 'number'
 		},
 		{

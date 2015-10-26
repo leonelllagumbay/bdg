@@ -349,6 +349,7 @@
 	        <cfset PREVEMPLOYED 			= '#CONTACTADDRESS2#'>
 			<cfset PREVAPPLIED 				= '#CONTACTADDRESS3#'>
 	        <cfset DATEAVAILEMP 			= '#ACREXPIRATIONDATE#'>
+	        <cfset ACRNUMBER 			    = '#ACRNUMBER#'>
 	</cfloop>
 
 	<cfset POSITIONFIRSTPRIORITY   = '_'>

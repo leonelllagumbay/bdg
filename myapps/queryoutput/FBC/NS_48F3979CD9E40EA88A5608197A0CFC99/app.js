@@ -26,8 +26,8 @@ Ext.application({
 			LASTNAME : 'Admin Last Name',
 			MIDDLENAME : 'Admin Middel Name',
 			MYMESSAGE : 'MMessage',
-			MYPROFILEPIC : '../../../../resource/image/pics201/fbc/noicon.png',
-			COMPANYLOGO : '../../../../resource/image/companylogo/banner.png',
+			MYPROFILEPIC : '../../../../resource/image/pics201/fbc/WIN_20151020_15_10_56_Pro.jpg',
+			COMPANYLOGO : '../../../../resource/image/companylogo/DIGINFO 2013 Logo white background.jpg',
 			COMPANYCODE: 'FBC',
 			COMPANYNAME: 'Filinvest Baseline Company',
 			SITE: 'http://localhost:8500/'

@@ -146,7 +146,11 @@
                           <cfqueryparam cfsqltype="cf_sql_varchar" value="#REFERREDBY#"/>,
                           <cfqueryparam cfsqltype="cf_sql_varchar" value="#SSSNUMBER#"/>,
 						  <cfqueryparam cfsqltype="cf_sql_varchar" value="#PHILHEALTHNUMBER#"/>,
-                          <cfqueryparam cfsqltype="cf_sql_varchar" value="#EXPECTEDSALARY#"/>,
+						  <cfif trim(EXPECTEDSALARY) eq "">
+						  		<cfqueryparam cfsqltype="cf_sql_integer" value="0"/>,
+						  <cfelse>
+                          		<cfqueryparam cfsqltype="cf_sql_integer" value="#EXPECTEDSALARY#"/>,
+						  </cfif>
                           <cfqueryparam cfsqltype="cf_sql_varchar" value="#TIN#"/>,
                           <cfqueryparam cfsqltype="cf_sql_varchar" value="#EMAILADD#"/>,
                           <cfqueryparam cfsqltype="cf_sql_varchar" value="#POSITIONCODE#"/>,
@@ -224,7 +228,7 @@
                       <cfqueryparam cfsqltype="cf_sql_varchar" value="#CONTACTADDRESS2#"/>,
                       <cfqueryparam cfsqltype="cf_sql_varchar" value="#CONTACTADDRESS3#"/>,
                       <cfqueryparam cfsqltype="cf_sql_date" value="#ACREXPIRATIONDATE#"/>,
-					  <cfqueryparam cfsqltype="cf_sql_date" value="#ACRNUMBER#"/> );
+					  <cfqueryparam cfsqltype="cf_sql_varchar" value="#ACRNUMBER#"/> );
    </cfquery>
 </cfloop>
 <!---END FETCH TO CIN21PERSONALINFO-------------------------------------------------------------------------------------->
