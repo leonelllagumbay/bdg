@@ -7,8 +7,6 @@ Ext.define('NS_SAMPLE2.view.main.Main', {
 	     'Ext.window.MessageBox',
 	     
 	     'NS_SAMPLE2.view.main.MainController'
-	     //'NS_SAMPLE2.view.main.MainModel',
-	     //'NS_SAMPLE2.view.main.List'
 	],
 	
 	controller: 'main',

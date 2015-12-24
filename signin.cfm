@@ -2,6 +2,7 @@
 	This page runs when Application's onRequestStart was called
 --->
 <cfsetting showdebugoutput="false" >
+
 <cftry>
 	<!---
 		form.password and form.newpassword should already be hashed from the client side.
@@ -12,7 +13,9 @@
 		      automatically logs out other working app under their user name and password.
 	--->
 	<cflogin>
+
 		    <cfif IsDefined("form.password") OR IsDefined("form.newpassword")>
+
 				<cfif lcase(form.username) eq "admin">
 					<cfset roles = "user,admin">
 		        <cfelse>
@@ -34,6 +37,7 @@
 					validationResult['message'] = '';
 					authObj = CreateObject("component","IBOSE.login.userauthentication");
 					theauthtype = authObj.authType(); //what kind of authentication the user selected
+
 					if(theauthtype == 'googleid')
 					{
 						// Code omitted because there is another way of doing this. Same with other types that are using OAuth2.0

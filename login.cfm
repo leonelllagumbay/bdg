@@ -32,11 +32,12 @@
 			<!---
 				client.companycode is the reason behind company cover page that follows the user once the
 				user log on then log out of an app. Client is used rather than session
-				so that it will remember the user in days (2 days by default) than in months.
+				so that it will remember the user in days (2 days by default).
 			--->
         	<cflocation url="#dhomepage#?companyid=#client.companycode#" addtoken="false" >
         <cfcatch type="Any" >
-        	<cfoutput>#cfcatch.detail# - #cfcatch.message#</cfoutput>
+        	<!--- <cfoutput>#cfcatch.detail# - #cfcatch.message#</cfoutput> --->
+			<cflocation url="#dhomepage#?bdg=MYIBOSE01052015" addtoken="false" >
         </cfcatch>
         </cftry>
         <cfabort>

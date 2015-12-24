@@ -69,6 +69,7 @@
 
 		if(CheckedUser.recordcount > 0) { /* User has initially valid login */
 			/* Check if the account has been disabled */
+
 			for(cnt=1;cnt<=CheckedUser.recordcount;cnt++) {
 				if(CheckedUser[ "DISABLEACCOUNT" ][ cnt ] == 'N') {
 					retMsg = "true";
@@ -84,6 +85,7 @@
 					}
 
 					setSessionVariables = setSessionVars(CheckedUser);
+
 					session.defaultuserapp = CheckedUser.DEFAULTAPPID; //especially used on after successful login
 					if(CheckedUser.CHANGEPWDNEXTLOGON == 'true') {
 						retMsg = "changepassword";
@@ -125,8 +127,8 @@
 		return retStruct;
 	}
 
-	public query function executeQuery(required string thename,required string thedatasource,required string thesql,string password,string blockfactor,string dbtype,string result,string cachedafter,string debug,string timeout,string cachedwithin,string maxrows,string username) {
-		qry = CreateObject("component","query");
+	public query function executeQuery(required string thename,required string thedatasource,required string thesql) {
+		var qry = CreateObject("component","query");
 		qry.setName(thename);
 		qry.setDatasource(thedatasource);
 		qry.setSql(thesql);
@@ -143,6 +145,9 @@
 		usertype = "NoUserType";
 		session.profilename = "NoProfileName@gmail.com";
 		session.maxdrivesize = 50;
+
+
+
 		for(cntr=1;cntr<=CheckedUser.recordcount;cntr++) {
 			//client variables will be replaced by session variables
 			session.userid = CheckedUser[ "USERID" ][ cntr ];
@@ -196,8 +201,8 @@
 			thesqC = "SELECT MAINTABLE,MAINKEY
 						FROM CLKUSERTYPE
 					   WHERE (USERTYPE   = '#usertype#')";
-			qryCLKUSERTYPE = executeQuery("qryCLKUSERTYPE","#companydsn#",thesqC);
 
+			qryCLKUSERTYPE = executeQuery("qryCLKUSERTYPE","#companydsn#",thesqC);
 			session.maintable = "NoMainTable";
 			maintable = "NoMainTable";
 			session.mainpk = "NoMainPK";
@@ -285,6 +290,9 @@
 			queryService.execute(sql=thesqlI);
 
 		}
+
+
+
 	}
 
 	public void function setupCompanySettings(required string companycode) {
