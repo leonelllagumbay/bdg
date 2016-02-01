@@ -177,9 +177,86 @@ Ext.define('OnlineApplication.controller.recruitment.applicationonline.controlle
             'trainingsandseminarview button[action=trainingseminartwelve]': {
             	click: this.addTrainings
             },
+			'familybackgroundview datefield[name=FATHERBIRTHDAY]': {
+				change: this.fatherAge
+			},
+			'familybackgroundview datefield[name=MOTHERBIRTHDAY]': {
+				change: this.motherAge
+			},
+			'familybackgroundview datefield[name=SPOUSEBIRTHDAY]': {
+				change: this.spouseAge
+			},
+			'familybackgroundview checkbox[name=FATHERDECEASED]': {
+				change: this.fatherDeceased
+			},
+			'familybackgroundview checkbox[name=MOTHERDECEASED]': {
+				change: this.motherDeceased
+			}
 		//control initialization here...
         });
     },
+	
+	fatherDeceased: function(f, v) {
+		var refage = Ext.ComponentQuery.query('numberfield[name=FATHERAGE]')[0];
+		refage.setReadOnly(v);
+		var refage = Ext.ComponentQuery.query('datefield[name=FATHERBIRTHDAY]')[0];
+		refage.setReadOnly(v);
+	}, 
+	
+	motherDeceased: function(f, v) {
+		var refage = Ext.ComponentQuery.query('numberfield[name=MOTHERAGE]')[0];
+		refage.setReadOnly(v);
+		var refage = Ext.ComponentQuery.query('datefield[name=MOTHERBIRTHDAY]')[0];
+		refage.setReadOnly(v);
+
+	}, 
+	
+	
+	fatherAge: function(field,value) {
+		var d1=new Date(value);
+		var d2=new Date();
+		var milli=d2-d1;
+		var milliPerYear=1000*60*60*24*365.26;
+		var yearsApart=milli/milliPerYear;
+		yearsApart = Math.floor(yearsApart);
+		var formPanel = field.up('form');
+		var form = formPanel.getForm();
+		form.setValues([{
+			id: 'FATHERAGEID',
+			value: yearsApart
+		}]);
+	},
+	
+	motherAge: function(field,value) {
+		var d1=new Date(value);
+		var d2=new Date();
+		var milli=d2-d1;
+		var milliPerYear=1000*60*60*24*365.26;
+		var yearsApart=milli/milliPerYear;
+		yearsApart = Math.floor(yearsApart);
+		var formPanel = field.up('form');
+		var form = formPanel.getForm();
+		form.setValues([{
+			id: 'MOTHERAGEID',
+			value: yearsApart
+		}]);
+	},
+	
+	
+	spouseAge: function(field,value) {
+		var d1=new Date(value);
+		var d2=new Date();
+		var milli=d2-d1;
+		var milliPerYear=1000*60*60*24*365.26;
+		var yearsApart=milli/milliPerYear;
+		yearsApart = Math.floor(yearsApart);
+		var formPanel = field.up('form');
+		var form = formPanel.getForm();
+		form.setValues([{
+			id: 'SPOUSEAGEID',
+			value: yearsApart
+		}]);
+	},
     
     reChapa: function(btn) {
     	var b = btn.up('form').down('displayfield[name=mycaptcha]');
@@ -727,11 +804,11 @@ Ext.define('OnlineApplication.controller.recruitment.applicationonline.controlle
 			items: [{
 				xtype: 'combobox',
 				cls: 'field-margin',
-				fieldLabel: 'College*',
+				fieldLabel: 'College',
 				labelAlign: 'top',
 				minChars: 1,
 				name: 'COLLEGESCHOOL',
-				allowBlank: false,
+				allowBlank: true,
 				maxLength: 100,
 				store: 'recruitment.applicationonline.schoolstore',
 				displayField: 'schoolname',
@@ -743,7 +820,7 @@ Ext.define('OnlineApplication.controller.recruitment.applicationonline.controlle
 				cls: 'field-margin',
 				name: 'COLLEGEFIELD',
 				maxLength: 100,
-				fieldLabel: '*',
+				fieldLabel: ' ',
 				labelAlign: 'top',
 				store: 'recruitment.applicationonline.schoolfieldstore',
 				displayField: 'fieldname',
@@ -757,19 +834,19 @@ Ext.define('OnlineApplication.controller.recruitment.applicationonline.controlle
 				xtype: 'textfield',
 				cls: 'field-margin',
 				name: 'COLLEGELOCATION',
-				allowBlank: false,
+				allowBlank: true,
 				maxLength: 100,
-				fieldLabel: '*',
+				fieldLabel: ' ',
 				labelAlign: 'top',
 				flex: 3
 			},{
 				xtype: 'combobox',
 				cls: 'field-margin',
-				fieldLabel: '*',
+				fieldLabel: ' ',
 				labelAlign: 'top',
 				minChars: 1,
 				name: 'COLLEGECOURSE',
-				allowBlank: false,
+				allowBlank: true,
 				maxLength: 100,
 				store: 'recruitment.applicationonline.schoolcoursestore',
 				displayField: 'coursename',

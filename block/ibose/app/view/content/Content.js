@@ -8,12 +8,7 @@ Ext.define('Ibose.view.content.Content', {
 	
 	controller: 'nav',
 	title: 'Grid Test',
-	height: '100%',
-    margin: 5,
-    flex: 2,
-    defaults: {
-        bodyStyle: 'padding:10px'
-    },
+	width: '100%',
     store: 'Ibose.store.main.MainStore',
     columns: [{ 
     	text: 'Name', 

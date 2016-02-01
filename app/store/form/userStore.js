@@ -10,7 +10,7 @@ Ext.define('Form.store.form.userStore', {
 				directFn: 'Ext.ss.lookup.getUser',
 				paramOrder: ['limit', 'page', 'query', 'start'],
 				reader: {
-					root: 'topics',
+					rootProperty: 'topics',
 					totalProperty: 'totalCount'
 				}
 			}

@@ -367,7 +367,7 @@ Ext.define('OnlineApplication.view.recruitment.applicationonline.personalInfoVie
 				},
 				items: [{
 					xtype: 'textfield',
-					fieldLabel: 'SSS',
+					fieldLabel: 'SSS <i>(XX-XXXXXXX-X)</i>',
 					name: 'SSSNUMBER', 
 					cls: 'field-margin',
 					labelAlign: 'top',
@@ -379,7 +379,7 @@ Ext.define('OnlineApplication.view.recruitment.applicationonline.personalInfoVie
 					xtype: 'textfield',
 					name: 'TINNUMBER',
 					padding: '0 0 0 50',
-					fieldLabel: 'TIN',
+					fieldLabel: 'TIN <i>(XXX-XXX-XXX)</i>',
 					cls: 'field-margin',
 					labelAlign: 'top',
 					allowBlank: true,
@@ -389,7 +389,7 @@ Ext.define('OnlineApplication.view.recruitment.applicationonline.personalInfoVie
 				},{
 					xtype: 'textfield',
 					name: 'PHILHEALTHNUMBER',
-					fieldLabel: 'PhilHealth',
+					fieldLabel: 'PhilHealth <i>(XX-XXXXXXXXX-X)</i>',
 					padding: '0 0 0 50',
 					cls: 'field-margin',
 					labelAlign: 'top',
@@ -401,7 +401,7 @@ Ext.define('OnlineApplication.view.recruitment.applicationonline.personalInfoVie
 					xtype: 'textfield',
 					name: 'PAGIBIGNUMBER',
 					padding: '0 0 0 50',
-					fieldLabel: 'PAG-IBIG',
+					fieldLabel: 'PAG-IBIG <i>(XXXX-XXXX-XXXX)</i>',
 					cls: 'field-margin',
 					labelAlign: 'top',
 					allowBlank: true,
@@ -425,6 +425,22 @@ Ext.define('OnlineApplication.view.recruitment.applicationonline.personalInfoVie
 					cls: 'field-margin',
 					flex: 4
 				},{
+					xtype: 'radiofield',
+					name: 'HEIGHT',
+					fieldLabel: 'cm',
+					inputValue: 'cm',
+					cls: 'field-margin',
+					labelAlign: 'top',
+					flex: 1
+				},{
+					xtype: 'radiofield',
+					name: 'HEIGHT',
+					fieldLabel: 'in',
+					inputValue: 'in',
+					cls: 'field-margin',
+					labelAlign: 'top',
+					flex: 1
+				},{
 					xtype: 'textfield',
 					name: 'WEIGHT',
 					fieldLabel: 'Weight',
@@ -433,6 +449,22 @@ Ext.define('OnlineApplication.view.recruitment.applicationonline.personalInfoVie
 					cls: 'field-margin',
 					maxLength: 15,
 					flex: 4
+				},{
+					xtype: 'radiofield',
+					name: 'WEIGHT',
+					fieldLabel: 'lb',
+					inputValue: 'lb',
+					cls: 'field-margin',
+					labelAlign: 'top',
+					flex: 1
+				},{
+					xtype: 'radiofield',
+					name: 'WEIGHT',
+					fieldLabel: 'kg',
+					inputValue: 'kg',
+					cls: 'field-margin',
+					labelAlign: 'top',
+					flex: 1
 				},{
 					xtype: 'textfield',
 					name: 'BLOODTYPE',
@@ -445,10 +477,11 @@ Ext.define('OnlineApplication.view.recruitment.applicationonline.personalInfoVie
 				},{
 					xtype: 'textfield',
 					cls: 'field-margin',
+					labelAlign: 'right',
 					name: 'LANGUAGESPOKEN',
 					fieldLabel: 'Languages and Dialects Spoken/Written',
 					maxLength: 50,
-					labelWidth: 230,
+					//labelWidth: 230,
 					flex: 11,
 					padding: '0 0 0 30',
 				}]

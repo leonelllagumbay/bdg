@@ -7,5 +7,8 @@ Ext.define('Ibose.view.main.MainController', {
 	onChanged: function(choice) {
 		console.log('You changed me');
 		// TODO: 
+	},
+	onAfterrender: function() {
+		console.log('After render');
 	}
 });

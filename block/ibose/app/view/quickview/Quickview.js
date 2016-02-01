@@ -20,8 +20,5 @@ Ext.define('Ibose.view.quickview.Quickview', {
     },
     collapsible: true,
     collapseDirection: 'right',
-    items: [{
-        xtype: 'displayfield',
-        value: '<img title="Filinvest Baseline Company" height="50" width="200" src="../../resource/image/companylogo/DIGINFO 2013 Logo white background.jpg">'
-    }]
+    items: []
 });

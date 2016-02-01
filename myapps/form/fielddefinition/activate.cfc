@@ -3063,6 +3063,7 @@
 								buttons: Ext.Msg.OK
 							});
 							autoeFormGrid.getStore().load();
+							thiss.up('window').close();
 							try
 							{
 								Ext.define('Search', {
@@ -3119,6 +3120,7 @@
 							buttons: Ext.Msg.OK
 						});
 						autoeFormGrid.getStore().load();
+						thiss.up('window').close();
 					}
 				});
 			} else {
