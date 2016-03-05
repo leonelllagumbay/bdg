@@ -20,13 +20,12 @@ Ext.define("iBOSe.view.myapps.AppsView",{
     
     columns: [{ 
     	text: 'Name', 
-    	dataIndex: 'name' 
-    }, { 
-    	text: 'Email', 
-    	dataIndex: 'email', 
+    	dataIndex: 'appname', 
     	flex: 1 
-    }, { 
-    	text: 'Phone', 
-    	dataIndex: 'phone' 
+    },{ 
+    	text: 'App Group', 
+    	dataIndex: 'appgroup',
+    	hidden: true,
+    	flex: 1
     }]
 });

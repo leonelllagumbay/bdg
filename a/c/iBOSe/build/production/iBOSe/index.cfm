@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html manifest="">
+<html manifest="cache.appcache">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
     <title>iBOSe</title>
 
-	<link rel="shortcut icon" type="image/ico" href="IBOSE/extra/diginfoicon.ico" />
+	<link rel="shortcut icon" type="image/ico" href="../diginfoicon.ico" />
 
     <script type="text/javascript">
         var Ext = Ext || {}; // Ext namespace won't be defined yet...
@@ -49,16 +49,7 @@
 
     <!-- The line below must be kept intact for Sencha Cmd to build your application -->
     <script id="microloader" data-app="82ae52d2-3406-4a87-9373-1207d964a29d" type="text/javascript" src="bootstrap.js"></script>
-	<!-- The following script is an exception coz of the lack of knowledge on bootstrapping this to the above ext js app -->
-	<script id="chatmanager" type="text/javascript" src="IBOSE/extra/chat.js"></script>
-	<cfwebsocket
-	     name        ="ws"
-	     onMessage   ="displayMessage"
-		 subscribeto ="chat"
-		 onError     ="displayError"
-		 onOpen      ="displayOpen"
-		 onClose     ="displayClose"
-	/>
+
 </head>
 <body></body>
 </html>

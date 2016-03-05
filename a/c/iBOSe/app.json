@@ -211,16 +211,13 @@
      *      }
      *
      */
-    "js": [
-    	{
-    		"path": "Api.cfm",
+    "js": [{
+    		"path": "IBOSE/Api.cfm",
     		"remote": true
-    	},
-        {
+    },{
             "path": "app.js",
             "bundle": true
-        }
-    ],
+    }],
 
     /**
      * Settings specific to classic toolkit builds.

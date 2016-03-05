@@ -9,17 +9,28 @@ Ext.define('iBOSe.view.main.MainController', {
 
     alias: 'controller.main',
     
+    onTabChange: function(tabpanel, newtab) {
+    	if (newtab.title != 'Workspace') {
+    		window.location.href = '#' + newtab.title.toLowerCase();
+    	}	
+    },
+	
     routes: {
     	'home': 'onHome',
     	'users/:id/:isactive': {
     		before: 'onBeforeUser',
     		action: 'onUsers'
     	},
-    	'administrator': 'onAdministrator'
+    	'administrator': 'onAdministrator',
+    	'dashboard': 'onDashboard',
+    	'apps': 'onApps',
+    	'workspace': 'onWorkspace',
+    	'workspace/:item': 'onWorkspace'
     },
     
     onHome: function() {
-    	Ext.Msg.alert('onHome','Home');
+    	var v = this.getView();
+    	v.setActiveTab(0);
     },
     
     onBeforeUser: function(id, isactive, action) {
@@ -34,5 +45,59 @@ Ext.define('iBOSe.view.main.MainController', {
     
     onAdministrator: function() {
     	Ext.Msg.alert('onAdministrator','Administrator');
+    },
+    
+    onDashboard: function() {
+    	var v = this.getView();
+    	v.setActiveTab(1);
+    },
+    
+    onApps: function() {
+    	var v = this.getView();
+    	v.setActiveTab(2);
+    },
+    
+    onWorkspace: function(item) {
+    	console.log('onworkspace');
+    	var v = this.getView();
+    	v.setActiveTab(3);
+
+    	if (item) {
+	    	var w = Ext.ComponentQuery.query(item)[0];	// item on the workspace item
+	    	var c = Ext.getCmp('iboseworkspace');
+	    	// if w is defined scroll to it
+	    	if (w) {
+	    		c.scrollBy(0, w.getY() - 20, true); 
+	    	} else {
+	    		/*
+	    		 * Check if this user has the right permission to access this item application component
+	    		 * using direct api
+	    		 */
+	    		var myMask = Ext.create('Ext.LoadMask',{
+	    			target: c,
+	    			msg: "Opening......."
+	    		});
+	        	myMask.show();
+	        	console.log('Admmin', Ext.administrator.APIDesc);
+	        	Ext.administrator.Administrator.hasComponentAccess(item, function(result) {
+	    			myMask.hide();
+	    			if(result['allowed']) {
+	    				/* 
+	    	    		 * Load the component and scroll to it and focus
+	    	    		 * This is the synchronous load
+	    	    		 */ 
+	    	    		try {
+	    	    			c.insert(0, [{
+	    		    			xtype: item
+	    		    		}]);
+	    	    		} catch(e) {
+	    	    			console.log("iBOSe W", "Item is not defined", e);
+	    	    		}
+	    			} else {
+	    				Ext.Msg.alert('', 'This component is not available at the moment.');
+	    			}
+	    		});	
+	    	}
+    	}
     }
 });

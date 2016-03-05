@@ -1,7 +1,7 @@
 
 Ext.define("iBOSe.view.foundation.Foundation",{
     extend: "Ext.tree.Panel",
-    xtype: 'ibosefoundation',
+    xtype: "ibosefoundation",
     requires: [
         "iBOSe.view.foundation.FoundationController",
         "iBOSe.view.foundation.FoundationModel",
@@ -9,17 +9,20 @@ Ext.define("iBOSe.view.foundation.Foundation",{
     ],
 
     controller: "foundation-foundation",
-    viewModel: {
+    viewModel: { 
         type: "foundation-foundation"
     },
     store: {
         type: 'ibosefoundationstore'
     },
-    title: 'Core Team Projects',
+    title: 'Core Model Manager',
+    border: true,
     collapsible: true,
+    closable: true,
     useArrows: true,
     rootVisible: false,
     multiSelect: true,
+    padding: '0 0 20 0',
     columns: [{
         xtype: 'treecolumn', //this is so we know which column will show the tree
         text: 'Task',

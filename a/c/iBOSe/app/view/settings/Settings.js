@@ -18,7 +18,12 @@ Ext.define("iBOSe.view.settings.Settings",{
     defaults: {
     	anchor: '100%'
     },
-    
+    width: '100%',
+    height: 300,
+    border: true,
+    collapsible: true,
+    closable: true,
+    padding: '0 0 20 0',
     // The fields
     defaultType: 'textfield',
     items: [{

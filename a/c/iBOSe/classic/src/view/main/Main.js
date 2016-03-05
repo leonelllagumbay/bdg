@@ -14,9 +14,10 @@ Ext.define('iBOSe.view.main.Main', {
         'Ext.window.MessageBox',
         'iBOSe.view.main.MainController',
         'iBOSe.view.main.MainModel',
-        'iBOSe.view.main.List',
+        'iBOSe.view.dashboard.DashboardView',
         'iBOSe.view.myapps.AppsView',
-        'iBOSe.view.foundation.Foundation'
+        'iBOSe.view.workspace.Workspace',
+        'iBOSe.view.home.HomeView'
     ],
 
     controller: 'main',
@@ -77,30 +78,36 @@ Ext.define('iBOSe.view.main.Main', {
         }
     },
 
+    listeners: {
+    	tabchange: 'onTabChange'
+    },
+    
     items: [{
         title: 'Home',
         iconCls: 'fa-home',
-        // The following grid shares a store with the classic version's grid as well!
+        autoScroll: true,
         items: [{
-            xtype: 'ibosefoundation'
+            xtype: 'homeview'
         }]
     }, {
         title: 'Dashboard',
         iconCls: 'fa-user',
-        bind: {
-            html: '{loremIpsum}'
-        }
+        items: [{
+        	xtype: 'dashboardview'
+        }]
     }, {
         title: 'Apps',
         iconCls: 'fa-users',
         items: [{
         	xtype: 'iboseappsview'
         }]
-    }, {
-        title: 'Settings',
+    },{
+        title: 'Workspace',
+        id: 'iboseworkspace',
         iconCls: 'fa-cog',
+        autoScroll: true,
         items: [{
-            xtype: 'ibosesettings'
+            xtype: 'iboseworkspace'
         }]
     }]
 });

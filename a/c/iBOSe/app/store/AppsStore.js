@@ -4,13 +4,30 @@ Ext.define('iBOSe.store.AppsStore', {
     alias: 'store.iboseappstore',
 
     fields: [
-        'name', 'email', 'phone'
+        'appgroup', 'appname'
     ],
 
-    data: { items: [
-        { name: 'Jean Luc', email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
-        { name: 'Worf',     email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" }
-    ]},
+    data: { 
+    	items: [{ 
+    		appgroup: 'KnowledgeWARE', 
+    		appname: "eFiles"
+    	},{ 
+    		appgroup: 'KnowledgeWARE', 
+    		appname: "eForums"
+    	},{ 
+    		appgroup: 'KnowledgeWARE', 
+    		appname: "eBooks"
+    	},{ 
+    		appgroup: 'KnowledgeWARE', 
+    		appname: "eNotes"
+    	},{ 
+    		appgroup: 'KnowledgeWARE', 
+    		appname: "eGallery"
+    	},{ 
+    		appgroup: 'KnowledgeWARE', 
+    		appname: "eRooms"
+    	}]
+    },
 
     proxy: {
         type: 'memory',
