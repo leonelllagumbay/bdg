@@ -14,7 +14,7 @@ Ext.define('iBOSe.store.HomeStore', {
     		messagebody: "<a href='#workspace/ibosefoundation'>Go to model manager...</a>", 
     		datereceived: new Date()
     	},{ 
-    		subject: 'Opdsdf', 
+    		subject: 'My Calendar', 
     		messagebody: "jeanluc.picard@enterprise.com", 
     		datereceived: new Date()
     	},{ 

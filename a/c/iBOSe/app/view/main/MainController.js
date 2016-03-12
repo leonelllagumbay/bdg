@@ -58,7 +58,6 @@ Ext.define('iBOSe.view.main.MainController', {
     },
     
     onWorkspace: function(item) {
-    	console.log('onworkspace');
     	var v = this.getView();
     	v.setActiveTab(3);
 
@@ -75,10 +74,14 @@ Ext.define('iBOSe.view.main.MainController', {
 	    		 */
 	    		var myMask = Ext.create('Ext.LoadMask',{
 	    			target: c,
+	    			modal: false,
+	    			width: '100%',
+	    			height: 87,
+	    			dock: 'top',
 	    			msg: "Opening......."
 	    		});
+	    		
 	        	myMask.show();
-	        	console.log('Admmin', Ext.administrator.APIDesc);
 	        	Ext.administrator.Administrator.hasComponentAccess(item, function(result) {
 	    			myMask.hide();
 	    			if(result['allowed']) {
@@ -91,7 +94,7 @@ Ext.define('iBOSe.view.main.MainController', {
 	    		    			xtype: item
 	    		    		}]);
 	    	    		} catch(e) {
-	    	    			console.log("iBOSe W", "Item is not defined", e);
+	    	    			console.log("iBOSe W", e);
 	    	    		}
 	    			} else {
 	    				Ext.Msg.alert('', 'This component is not available at the moment.');

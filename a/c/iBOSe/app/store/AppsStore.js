@@ -10,10 +10,10 @@ Ext.define('iBOSe.store.AppsStore', {
     data: { 
     	items: [{ 
     		appgroup: 'KnowledgeWARE', 
-    		appname: "eFiles"
+    		appname: "<a href='#workspace/mycalendar'>My Calendar</a>"
     	},{ 
     		appgroup: 'KnowledgeWARE', 
-    		appname: "eForums"
+    		appname: "<a href='#workspace/ibosereminder'>eReminders</a>"
     	},{ 
     		appgroup: 'KnowledgeWARE', 
     		appname: "eBooks"

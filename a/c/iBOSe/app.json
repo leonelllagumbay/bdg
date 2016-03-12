@@ -557,22 +557,22 @@
      *     }
      *
      */
-    
+     
     "builds": {
         "classic": {
-            "toolkit": "classic",
-            
-            "theme": "theme-triton",
+            "toolkit": "classic", 
+              
+            "theme": "theme-neptune", 
             
             "sass": {
                 // "save": "classic/sass/save.scss"
-            }
+            }  
         },
 
         "modern": {
             "toolkit": "modern",
             
-            "theme": "theme-triton",
+            "theme": "theme-neptune",
             
             "sass": {
                 // "save": "modern/sass/save.scss"

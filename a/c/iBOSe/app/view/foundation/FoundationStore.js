@@ -1,6 +1,7 @@
 Ext.define('iBOSe.view.foundation.FoundationStore', {
 	extend: 'Ext.data.TreeStore',
 	alias: 'store.ibosefoundationstore',
+	model: 'iBOSe.model.FoundationModel',
 	fields: [
 	         {name: 'task',     type: 'string'},
 	         {name: 'user',     type: 'string'},

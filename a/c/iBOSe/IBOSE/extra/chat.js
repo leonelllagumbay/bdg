@@ -1,4 +1,5 @@
-function displayMessage() {
+function displayMessage(s) {
+	console.log('display message', s);
 	
 }
 
